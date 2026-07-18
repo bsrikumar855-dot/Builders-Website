@@ -68,6 +68,17 @@ module.exports = {
           500: "#f59e0b",
           600: "#d97706",
         },
+        // ── Design system tokens (2026 motion/visual pass) ──────────────────
+        // Named literal colors for new components. Existing shared classes
+        // (.btn-primary, .btn-accent, .gradient-brand, category chips) pull
+        // the same values via the CSS custom properties in globals.css, so
+        // old and new components stay visually consistent without every
+        // file needing to reference these names directly.
+        graphite: "#1C2128",
+        "warm-white": "#FAF8F5",
+        voltage: "#F4A83C",
+        copper: "#B5652E",
+        "slate-body": "#4A5568",
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -75,8 +86,17 @@ module.exports = {
         sm: "calc(var(--radius) - 4px)",
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        display: ["var(--font-inter)", "system-ui", "sans-serif"],
+        sans: ["var(--font-body)", "system-ui", "sans-serif"],
+        body: ["var(--font-body)", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "system-ui", "sans-serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "SFMono-Regular", "monospace"],
+      },
+      fontSize: {
+        // Fluid, clamp-based — scale by viewport instead of breakpoint jumps
+        "display-xl": ["clamp(2.5rem, 5.5vw, 4.5rem)", { lineHeight: "1.05", letterSpacing: "-0.02em", fontWeight: "700" }],
+        "display-lg": ["clamp(2rem, 4vw, 3.5rem)", { lineHeight: "1.1", letterSpacing: "-0.015em", fontWeight: "700" }],
+        heading: ["clamp(1.5rem, 2.5vw, 2.25rem)", { lineHeight: "1.2", letterSpacing: "-0.01em", fontWeight: "700" }],
+        body: ["1.0625rem", { lineHeight: "1.7" }],
       },
       keyframes: {
         "accordion-down": {

@@ -9,7 +9,7 @@ export default function Footer() {
   const plumbing = services.filter((s) => s.category === "plumbing");
 
   return (
-    <footer className="bg-slate-900 text-slate-300">
+    <footer className="bg-graphite text-warm-white/70">
       {/* Main Footer */}
       <div className="section-container py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">

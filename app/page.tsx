@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Phone, ArrowRight, CheckCircle, MapPin } from "lucide-react";
 import Hero from "@/components/sections/Hero";
 import TrustBar from "@/components/sections/TrustBar";
-import ServiceCard from "@/components/sections/ServiceCard";
+import ServicesBento from "@/components/sections/ServicesBento";
 import ProcessSteps from "@/components/sections/ProcessSteps";
 import TestimonialCarousel from "@/components/sections/TestimonialCarousel";
 import CTASection from "@/components/sections/CTASection";
@@ -36,9 +36,8 @@ export default function HomePage() {
     <>
       <Hero
         eyebrow="Coimbatore's Trusted Electrical & Plumbing Specialists"
-        headline="Reliable Electrical & Plumbing Services You Can Count On"
+        headlineLines={["Electrical &", "Plumbing,", "Done Right"]}
         subheadline="Licensed, insured, and serving Coimbatore since 2008. Residential and commercial work done right — the first time."
-        backgroundImage="/images/hero-bg.svg"
       />
 
       <TrustBar />
@@ -55,11 +54,7 @@ export default function HomePage() {
               View All Services <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {featured.map((service) => (
-              <ServiceCard key={service.slug} service={service} />
-            ))}
-          </div>
+          <ServicesBento services={featured} />
         </div>
       </section>
 

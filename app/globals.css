@@ -6,34 +6,41 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 220 30% 10%;
+    --background: 36 33% 97%;
+    --foreground: 218 17% 35%;
     --card: 0 0% 100%;
-    --card-foreground: 220 30% 10%;
+    --card-foreground: 218 17% 35%;
     --popover: 0 0% 100%;
-    --popover-foreground: 220 30% 10%;
-    --primary: 220 72% 28%;
-    --primary-foreground: 0 0% 100%;
-    --secondary: 220 20% 96%;
-    --secondary-foreground: 220 30% 15%;
-    --muted: 220 15% 95%;
-    --muted-foreground: 220 15% 45%;
-    --accent: 38 96% 50%;
-    --accent-foreground: 220 30% 10%;
+    --popover-foreground: 218 17% 35%;
+    --primary: 35 89% 60%;
+    --primary-foreground: 215 18% 13%;
+    --primary-hover: 35 89% 48%;
+    --secondary: 36 20% 94%;
+    --secondary-foreground: 215 18% 13%;
+    --muted: 36 15% 93%;
+    --muted-foreground: 218 12% 45%;
+    --accent: 24 59% 38%;
+    --accent-foreground: 36 33% 97%;
+    --accent-hover: 24 62% 30%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 220 15% 88%;
-    --input: 220 15% 88%;
-    --ring: 220 72% 28%;
+    --border: 30 12% 88%;
+    --input: 30 12% 88%;
+    --ring: 35 89% 60%;
     --radius: 0.625rem;
 
-    /* Brand specific */
-    --brand-blue: 220 72% 28%;
-    --brand-blue-dark: 220 72% 16%;
-    --brand-blue-light: 220 72% 42%;
-    --brand-amber: 38 96% 50%;
-    --brand-amber-dark: 32 93% 40%;
-    --brand-slate: 220 20% 20%;
+    /* Design-system tokens — single source of truth. Tailwind's
+       theme.extend.colors reads the hex form of these same five values
+       for utility classes (bg-voltage, text-copper, ...); the
+       hand-rolled component classes below read this HSL form. Never
+       hardcode these hex/hsl values anywhere else — extend from here. */
+    --graphite: 215 18% 13%;       /* #1C2128 */
+    --graphite-deep: 215 20% 8%;   /* gradient-brand dark stop */
+    --graphite-lifted: 215 15% 24%; /* gradient-brand lit stop */
+    --voltage: 35 89% 60%;         /* #F4A83C */
+    --copper: 24 59% 45%;          /* #B5652E */
+    --slate-body: 218 17% 35%;     /* #4A5568 */
+    --warm-white: 36 33% 97%;      /* #FAF8F5 */
   }
 
   * {
@@ -66,35 +73,39 @@
 @layer components {
   /* Brand Buttons */
   .btn-primary {
-    @apply inline-flex items-center gap-2 rounded-lg px-6 py-3 font-semibold text-white text-base
-           transition-all duration-200 shadow-md hover:shadow-lg active:scale-95 focus-visible:outline-none 
+    @apply inline-flex items-center gap-2 rounded-lg px-6 py-3 font-semibold text-graphite text-base
+           transition-all duration-200 shadow-md hover:shadow-lg active:scale-95 focus-visible:outline-none
            focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
     background-color: hsl(var(--primary));
   }
   .btn-primary:hover {
-    background-color: hsl(var(--brand-blue-dark));
+    background-color: hsl(var(--primary-hover));
   }
 
   .btn-accent {
-    @apply inline-flex items-center gap-2 rounded-lg px-6 py-3 font-semibold text-slate-900 text-base
+    @apply inline-flex items-center gap-2 rounded-lg px-6 py-3 font-semibold text-warm-white text-base
            transition-all duration-200 shadow-md hover:shadow-lg active:scale-95 focus-visible:outline-none
            focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
     background-color: hsl(var(--accent));
   }
   .btn-accent:hover {
-    background-color: hsl(var(--brand-amber-dark));
+    background-color: hsl(var(--accent-hover));
   }
 
+  /* Neutral graphite outline — used on light/warm-white sections.
+     (Voltage is deliberately never used as small text/border on light
+     backgrounds: it fails contrast there. It only works as a solid fill
+     with dark text, or as foreground on dark graphite backgrounds.) */
   .btn-outline {
     @apply inline-flex items-center gap-2 rounded-lg border-2 px-6 py-3 font-semibold text-base
            transition-all duration-200 hover:shadow active:scale-95 focus-visible:outline-none
            focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
-    border-color: hsl(var(--primary));
-    color: hsl(var(--primary));
+    border-color: hsl(var(--graphite));
+    color: hsl(var(--graphite));
   }
   .btn-outline:hover {
-    background-color: hsl(var(--primary));
-    color: white;
+    background-color: hsl(var(--graphite));
+    color: hsl(var(--warm-white));
   }
 
   .btn-ghost-white {
@@ -138,10 +149,10 @@
     @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider;
   }
   .category-chip-electrical {
-    @apply category-chip bg-blue-100 text-blue-800;
+    @apply category-chip bg-voltage/15 text-graphite;
   }
   .category-chip-plumbing {
-    @apply category-chip bg-cyan-100 text-cyan-800;
+    @apply category-chip bg-copper/20 text-graphite;
   }
 }
 
@@ -150,15 +161,15 @@
   .text-pretty { text-wrap: pretty; }
   
   .gradient-brand {
-    background: linear-gradient(135deg, hsl(var(--brand-blue-dark)) 0%, hsl(var(--brand-blue)) 60%, hsl(var(--brand-blue-light)) 100%);
+    background: linear-gradient(135deg, hsl(var(--graphite-deep)) 0%, hsl(var(--graphite)) 60%, hsl(var(--graphite-lifted)) 100%);
   }
 
   .gradient-hero {
-    background: linear-gradient(160deg, hsl(220 72% 12%) 0%, hsl(220 72% 24%) 50%, hsl(215 65% 35%) 100%);
+    background: linear-gradient(160deg, hsl(var(--graphite-deep)) 0%, hsl(var(--graphite)) 50%, hsl(var(--graphite-lifted)) 100%);
   }
 
   .hero-overlay {
-    background: linear-gradient(to right, rgba(10,22,50,0.92) 0%, rgba(10,22,50,0.7) 60%, rgba(10,22,50,0.4) 100%);
+    background: linear-gradient(to right, hsl(var(--graphite) / 0.92) 0%, hsl(var(--graphite) / 0.7) 60%, hsl(var(--graphite) / 0.4) 100%);
   }
 
   .section-alt {
