@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e293b" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#g)" />
+  <circle cx="400" cy="220" r="100" fill="#3b82f6" opacity="0.05" />
+  <!-- Map pin and buildings -->
+  <g stroke="#3b82f6" stroke-width="4" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M 400 130 C 360 130 330 160 330 200 C 330 250 400 310 400 310 C 400 310 470 250 470 200 C 470 160 440 130 400 130 Z" stroke="#fbbf24" stroke-width="6" fill="none" />
+    <circle cx="400" cy="200" r="20" stroke="#fbbf24" stroke-width="5" />
+  </g>
+  <text x="400" y="380" font-family="Inter, system-ui, sans-serif" font-size="32" font-weight="bold" fill="#ffffff" text-anchor="middle">Gandhipuram</text>
+  <text x="400" y="420" font-family="Inter, system-ui, sans-serif" font-size="16" fill="#94a3b8" text-anchor="middle">Coimbatore District · Shreekumar Builders Service Area</text>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="100%" height="100%">
+  <defs>
+    <linearGradient id="ogGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e3a8a" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#ogGrad)" />
+  <circle cx="900" cy="315" r="200" fill="#fbbf24" opacity="0.05" />
+  
+  <g transform="translate(100, 200)">
+    <!-- Logo Icon -->
+    <rect width="80" height="80" rx="16" fill="url(#ogGrad)" stroke="#fbbf24" stroke-width="4" />
+    <text x="40" y="55" font-family="Inter, system-ui, sans-serif" font-size="48" font-weight="900" fill="#ffffff" text-anchor="middle">S</text>
+    
+    <!-- Title -->
+    <text x="110" y="45" font-family="Inter, system-ui, sans-serif" font-size="36" font-weight="bold" fill="#ffffff">Shreekumar Builders</text>
+    <text x="110" y="75" font-family="Inter, system-ui, sans-serif" font-size="20" font-weight="semibold" fill="#93c5fd" letter-spacing="2">ELECTRICAL &amp; PLUMBING</text>
+  </g>
+  
+  <text x="100" y="420" font-family="Inter, system-ui, sans-serif" font-size="40" font-weight="800" fill="#ffffff" max-width="800">Licensed Electrical &amp; Plumbing Contractors</text>
+  <text x="100" y="470" font-family="Inter, system-ui, sans-serif" font-size="24" fill="#cbd5e1">Coimbatore, Tamilnadu · Est. 2008</text>
+</svg>

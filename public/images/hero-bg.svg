@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" width="100%" height="100%">
+  <defs>
+    <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070a13" />
+      <stop offset="50%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e3a8a" />
+    </linearGradient>
+    <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M 80 0 L 0 0 0 80" fill="none" stroke="rgba(255, 255, 255, 0.03)" stroke-width="1" />
+    </pattern>
+  </defs>
+  <rect width="1920" height="1080" fill="url(#heroGrad)" />
+  <rect width="1920" height="1080" fill="url(#grid)" />
+  
+  <!-- Abstract architectural shapes representing construction/builders -->
+  <path d="M 1200 1080 L 1400 400 L 1600 1080 Z" fill="rgba(59, 130, 246, 0.1)" />
+  <path d="M 1400 1080 L 1650 200 L 1900 1080 Z" fill="rgba(251, 191, 36, 0.05)" />
+  <path d="M 900 1080 L 1150 500 L 1400 1080 Z" fill="rgba(59, 130, 246, 0.05)" />
+
+  <!-- Ambient glowing spots -->
+  <circle cx="1400" cy="300" r="250" fill="#fbbf24" opacity="0.1" filter="blur(80px)" />
+  <circle cx="400" cy="800" r="300" fill="#3b82f6" opacity="0.15" filter="blur(100px)" />
+
+  <text x="150" y="500" font-family="Inter, system-ui, sans-serif" font-size="64" font-weight="900" fill="rgba(255,255,255,0.03)">SHREEKUMAR BUILDERS</text>
+</svg>

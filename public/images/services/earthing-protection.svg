@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e3a8a" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#g)" />
+  <circle cx="400" cy="220" r="100" fill="#fbbf24" opacity="0.05" />
+  <!-- Earthing rod & ground symbol -->
+  <g stroke="#fbbf24" stroke-width="4" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M 400 130 V 270" stroke-width="6" />
+    <path d="M 340 270 H 460" />
+    <path d="M 360 285 H 440" />
+    <path d="M 380 300 H 420" />
+    <!-- Protection lightning bolt -->
+    <path d="M 430 110 L 380 180 H 430 L 400 230" stroke="#ef4444" stroke-width="4" fill="none" />
+  </g>
+  <text x="400" y="380" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="bold" fill="#ffffff" text-anchor="middle">Earthing &amp; Lightning Protection</text>
+  <text x="400" y="420" font-family="Inter, system-ui, sans-serif" font-size="16" fill="#94a3b8" text-anchor="middle">Protection Systems · Shreekumar Builders</text>
+</svg>

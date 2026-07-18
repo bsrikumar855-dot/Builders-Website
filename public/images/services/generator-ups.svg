@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#1e3a8a" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#g)" />
+  <circle cx="400" cy="220" r="100" fill="#fbbf24" opacity="0.05" />
+  <!-- Generator / Battery icon -->
+  <g stroke="#3b82f6" stroke-width="4" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <rect x="320" y="150" width="160" height="130" rx="8" fill="rgba(255,255,255,0.03)" />
+    <!-- Terminals -->
+    <path d="M 350 150 V 135 H 360" />
+    <path d="M 450 150 V 135 H 440" />
+    <text x="355" y="130" font-family="Inter, sans-serif" font-size="20" font-weight="bold" fill="#ef4444" stroke="none">+</text>
+    <text x="445" y="130" font-family="Inter, sans-serif" font-size="20" font-weight="bold" fill="#3b82f6" stroke="none">-</text>
+    <!-- Lightning bolt inside -->
+    <path d="M 410 175 L 380 220 H 420 L 390 255" stroke="#fbbf24" stroke-width="5" />
+  </g>
+  <text x="400" y="380" font-family="Inter, system-ui, sans-serif" font-size="28" font-weight="bold" fill="#ffffff" text-anchor="middle">Generator &amp; UPS Installation</text>
+  <text x="400" y="420" font-family="Inter, system-ui, sans-serif" font-size="16" fill="#94a3b8" text-anchor="middle">Power Backup Solutions · Shreekumar Builders</text>
+</svg>
