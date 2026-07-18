@@ -126,6 +126,7 @@ export default function MobileNav({ open, onClose }: MobileNavProps) {
               { label: "All Services", href: "/services" },
               { label: "Projects", href: "/projects" },
               { label: "Service Areas", href: "/areas" },
+              { label: "Blog", href: "/blog" },
               { label: "About Us", href: "/about" },
               { label: "Contact", href: "/contact" },
             ].map((link) => (

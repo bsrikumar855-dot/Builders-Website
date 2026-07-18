@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#0891b2" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#g)" />
+  <circle cx="400" cy="220" r="100" fill="#22d3ee" opacity="0.05" />
+  <!-- Wall with concealed pipe -->
+  <g stroke="#22d3ee" stroke-width="5" fill="none" stroke-linejoin="round" stroke-linecap="round">
+    <rect x="300" y="130" width="200" height="150" rx="6" fill="rgba(255,255,255,0.03)" stroke-width="4" />
+    <path d="M 300 200 H 500" stroke-dasharray="10 8" stroke-width="4" opacity="0.6" />
+    <!-- Damp patch -->
+    <ellipse cx="360" cy="215" rx="26" ry="18" fill="#38bdf8" opacity="0.35" stroke="none" />
+  </g>
+  <!-- Magnifying glass -->
+  <g stroke="#fbbf24" stroke-width="6" fill="none" stroke-linecap="round">
+    <circle cx="450" cy="240" r="34" />
+    <path d="M 474 264 L 500 290" />
+  </g>
+  <text x="400" y="380" font-family="Inter, system-ui, sans-serif" font-size="26" font-weight="bold" fill="#ffffff" text-anchor="middle">Spotting Hidden Water Leaks</text>
+  <text x="400" y="420" font-family="Inter, system-ui, sans-serif" font-size="16" fill="#94a3b8" text-anchor="middle">Plumbing Guide · Shreekumar Builders</text>
+</svg>

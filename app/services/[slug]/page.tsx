@@ -4,10 +4,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { Phone, CheckCircle, ArrowRight, IndianRupee } from "lucide-react";
 import { getServiceBySlug, services } from "@/data/services";
+import { getPostsByServiceSlug } from "@/data/blog-posts";
 import ProcessSteps from "@/components/sections/ProcessSteps";
 import FAQAccordion from "@/components/sections/FAQAccordion";
 import CTASection from "@/components/sections/CTASection";
 import ServiceCard from "@/components/sections/ServiceCard";
+import BlogCard from "@/components/sections/BlogCard";
 import { ServiceJsonLd } from "@/components/seo/JsonLd";
 import { siteConfig } from "@/lib/site-config";
 
@@ -44,6 +46,8 @@ export default function ServicePage({ params }: Props) {
   const relatedServices = service.relatedSlugs
     .map((slug) => services.find((s) => s.slug === slug))
     .filter(Boolean) as typeof services;
+
+  const relatedPosts = getPostsByServiceSlug(service.slug).slice(0, 2);
 
   return (
     <>
@@ -150,6 +154,22 @@ export default function ServicePage({ params }: Props) {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {relatedServices.map((s) => (
                 <ServiceCard key={s.slug} service={s} />
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Related Articles */}
+      {relatedPosts.length > 0 && (
+        <section className="section-padding" aria-labelledby="related-articles-heading">
+          <div className="section-container">
+            <h2 id="related-articles-heading" className="text-slate-900 text-center mb-10">
+              Helpful Articles
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+              {relatedPosts.map((p) => (
+                <BlogCard key={p.slug} post={p} />
               ))}
             </div>
           </div>

@@ -63,6 +63,50 @@ export function LocalBusinessJsonLd({ page }: LocalBusinessJsonLdProps) {
   );
 }
 
+interface ArticleJsonLdProps {
+  headline: string;
+  description: string;
+  authorName: string;
+  datePublished: string;
+  image: string;
+  url: string;
+}
+
+export function ArticleJsonLd({ headline, description, authorName, datePublished, image, url }: ArticleJsonLdProps) {
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline,
+    description,
+    image: `${siteConfig.url}${image}`,
+    datePublished,
+    dateModified: datePublished,
+    author: {
+      "@type": "Person",
+      name: authorName,
+    },
+    publisher: {
+      "@type": "Organization",
+      name: siteConfig.name,
+      logo: {
+        "@type": "ImageObject",
+        url: `${siteConfig.url}/images/logo.svg`,
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${siteConfig.url}${url}`,
+    },
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
 interface ServiceJsonLdProps {
   name: string;
   description: string;

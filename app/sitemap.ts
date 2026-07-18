@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { services } from "@/data/services";
 import { areas } from "@/data/areas";
+import { posts } from "@/data/blog-posts";
 import { siteConfig } from "@/lib/site-config";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -13,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/services/electrical`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/services/plumbing`, lastModified: now, changeFrequency: "monthly", priority: 0.85 },
     { url: `${base}/projects`, lastModified: now, changeFrequency: "monthly", priority: 0.75 },
+    { url: `${base}/blog`, lastModified: now, changeFrequency: "weekly", priority: 0.8 },
     { url: `${base}/about`, lastModified: now, changeFrequency: "yearly", priority: 0.7 },
     { url: `${base}/areas`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${base}/contact`, lastModified: now, changeFrequency: "yearly", priority: 0.8 },
@@ -33,5 +35,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.75,
   }));
 
-  return [...staticRoutes, ...serviceRoutes, ...areaRoutes];
+  const blogRoutes: MetadataRoute.Sitemap = posts.map((p) => ({
+    url: `${base}/blog/${p.slug}`,
+    lastModified: new Date(p.publishedDate).toISOString(),
+    changeFrequency: "monthly",
+    priority: 0.7,
+  }));
+
+  return [...staticRoutes, ...serviceRoutes, ...areaRoutes, ...blogRoutes];
 }
