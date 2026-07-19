@@ -1,3 +1,6 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import { siteConfig } from "@/lib/site-config";
 
 interface LocalBusinessJsonLdProps {
@@ -5,14 +8,20 @@ interface LocalBusinessJsonLdProps {
 }
 
 export function LocalBusinessJsonLd({ page }: LocalBusinessJsonLdProps) {
+  const pathname = usePathname();
+  const isSecurity = pathname?.startsWith("/security") ?? false;
+  
+  const brandKey = isSecurity ? "sabari" : "shreekumar";
+  const brandConfig = siteConfig.brands[brandKey];
+
   const data = {
     "@context": "https://schema.org",
-    "@type": "HomeAndConstructionBusiness",
-    "@id": `${siteConfig.url}${page ?? ""}`,
-    name: siteConfig.name,
-    url: siteConfig.url,
-    telephone: siteConfig.phone,
-    email: siteConfig.email,
+    "@type": isSecurity ? "SecurityService" : "HomeAndConstructionBusiness",
+    "@id": `${siteConfig.url}${page ?? pathname ?? ""}`,
+    name: brandConfig.name,
+    url: `${siteConfig.url}${isSecurity ? "/security" : ""}`,
+    telephone: brandConfig.phone,
+    email: brandConfig.email,
     address: {
       "@type": "PostalAddress",
       streetAddress: "42, Avinashi Road",
@@ -42,17 +51,17 @@ export function LocalBusinessJsonLd({ page }: LocalBusinessJsonLdProps) {
     ],
     hasCredential: {
       "@type": "EducationalOccupationalCredential",
-      credentialCategory: "Electrical Contractor Licence",
+      credentialCategory: isSecurity ? "Private Security Agency Licence" : "Electrical Contractor Licence",
       recognizedBy: {
         "@type": "Organization",
-        name: "Tamil Nadu Electrical Licensing Board",
+        name: isSecurity ? "Tamil Nadu Private Security Agencies Rules Authority" : "Tamil Nadu Electrical Licensing Board",
       },
     },
     sameAs: [siteConfig.social.facebook, siteConfig.social.instagram].filter(Boolean),
-    description: siteConfig.description,
-    foundingDate: String(siteConfig.established),
+    description: brandConfig.description,
+    foundingDate: String(brandConfig.established),
     logo: `${siteConfig.url}/images/logo.png`,
-    image: `${siteConfig.url}${siteConfig.ogImage}`,
+    image: `${siteConfig.url}${brandConfig.ogImage}`,
   };
 
   return (
@@ -73,6 +82,11 @@ interface ArticleJsonLdProps {
 }
 
 export function ArticleJsonLd({ headline, description, authorName, datePublished, image, url }: ArticleJsonLdProps) {
+  const pathname = usePathname();
+  const isSecurity = pathname?.startsWith("/security") ?? false;
+  const brandKey = isSecurity ? "sabari" : "shreekumar";
+  const brandConfig = siteConfig.brands[brandKey];
+
   const data = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -87,7 +101,7 @@ export function ArticleJsonLd({ headline, description, authorName, datePublished
     },
     publisher: {
       "@type": "Organization",
-      name: siteConfig.name,
+      name: brandConfig.name,
       logo: {
         "@type": "ImageObject",
         url: `${siteConfig.url}/images/logo.svg`,
@@ -111,9 +125,15 @@ interface ServiceJsonLdProps {
   name: string;
   description: string;
   url: string;
+  brand?: "shreekumar" | "sabari";
 }
 
-export function ServiceJsonLd({ name, description, url }: ServiceJsonLdProps) {
+export function ServiceJsonLd({ name, description, url, brand }: ServiceJsonLdProps) {
+  const pathname = usePathname();
+  const isSecurity = brand ? brand === "sabari" : (pathname?.startsWith("/security") ?? false);
+  const brandKey = isSecurity ? "sabari" : "shreekumar";
+  const brandConfig = siteConfig.brands[brandKey];
+
   const data = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -122,8 +142,8 @@ export function ServiceJsonLd({ name, description, url }: ServiceJsonLdProps) {
     url: `${siteConfig.url}${url}`,
     provider: {
       "@type": "LocalBusiness",
-      name: siteConfig.name,
-      url: siteConfig.url,
+      name: brandConfig.name,
+      url: `${siteConfig.url}${isSecurity ? "/security" : ""}`,
     },
     areaServed: {
       "@type": "City",
@@ -132,7 +152,7 @@ export function ServiceJsonLd({ name, description, url }: ServiceJsonLdProps) {
     offers: {
       "@type": "Offer",
       priceCurrency: "INR",
-      description: "Free estimate. Call for pricing.",
+      description: isSecurity ? "Free site survey. Call for design and audit." : "Free estimate. Call for pricing.",
     },
   };
 
