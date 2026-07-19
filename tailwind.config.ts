@@ -79,6 +79,8 @@ module.exports = {
         voltage: "#F4A83C",
         copper: "#B5652E",
         "slate-body": "#4A5568",
+        "security-primary": "#1F4B43",
+        "security-accent": "#3D9970",
       },
       borderRadius: {
         lg: "var(--radius)",

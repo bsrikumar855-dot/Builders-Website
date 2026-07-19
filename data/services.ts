@@ -1,4 +1,6 @@
-export type ServiceCategory = "electrical" | "plumbing";
+import { securityServices } from "./security-services";
+
+export type ServiceCategory = "electrical" | "plumbing" | "security";
 
 export interface FAQ {
   question: string;
@@ -19,9 +21,10 @@ export interface Service {
   icon: string; // lucide icon name
   featured: boolean;
   relatedSlugs: string[];
+  brand?: "shreekumar" | "sabari";
 }
 
-export const services: Service[] = [
+const shreekumarServices: Service[] = [
   // ── ELECTRICAL ─────────────────────────────────────────────────────────────
   {
     slug: "wiring-rewiring",
@@ -505,7 +508,11 @@ export const services: Service[] = [
     icon: "Building2",
     featured: false,
     relatedSlugs: ["water-tank-installation", "pipe-leak-repair"],
-  },
+];
+
+export const services: Service[] = [
+  ...shreekumarServices.map((s) => ({ ...s, brand: "shreekumar" as const })),
+  ...securityServices,
 ];
 
 export function getServiceBySlug(slug: string): Service | undefined {

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="100%" height="100%" opacity="0.85">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#071411" />
+      <stop offset="100%" stop-color="#14302b" />
+    </linearGradient>
+    <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+      <path d="M 60 0 L 0 0 0 60" fill="none" stroke="#3D9970" stroke-width="1.5" opacity="0.08" />
+    </pattern>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)" />
+  <rect width="1600" height="900" fill="url(#grid)" />
+  
+  <!-- Abstract Tech / Radar Shapes -->
+  <circle cx="1200" cy="450" r="350" fill="none" stroke="#3D9970" stroke-width="2" opacity="0.1" />
+  <circle cx="1200" cy="450" r="200" fill="none" stroke="#3D9970" stroke-width="1.5" stroke-dasharray="8 8" opacity="0.15" />
+  <circle cx="1200" cy="450" r="80" fill="none" stroke="#3D9970" stroke-width="3" opacity="0.2" />
+  <circle cx="1200" cy="450" r="10" fill="#3D9970" opacity="0.5" />
+  
+  <!-- Radar sweep line -->
+  <line x1="1200" y1="450" x2="950" y2="200" stroke="#3D9970" stroke-width="2" opacity="0.25" stroke-linecap="round" />
+  
+  <!-- Shield element inside radar -->
+  <path d="M 1180 400 L 1220 400 L 1220 440 Q 1200 460 1180 440 Z" fill="none" stroke="#3D9970" stroke-width="1.5" opacity="0.15" />
+  
+  <!-- Dynamic Perimeter Path Line -->
+  <path d="M 100,200 L 1500,200 L 1500,700 L 100,700 Z" fill="none" stroke="#3D9970" stroke-width="2" stroke-dasharray="15 15" opacity="0.1" />
+  
+  <!-- Soft highlight glows -->
+  <circle cx="1200" cy="450" r="450" fill="url(#bg)" opacity="0.2" />
+</svg>
