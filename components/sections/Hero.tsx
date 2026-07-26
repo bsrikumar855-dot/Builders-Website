@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { Phone, ArrowRight } from "lucide-react";
 import HeroReveal, { HERO_SIGNATURE_DELAY } from "@/components/motion/HeroReveal";
@@ -5,6 +7,9 @@ import SignatureLine from "@/components/motion/SignatureLine";
 import MagneticButton from "@/components/motion/MagneticButton";
 import { siteConfig } from "@/lib/site-config";
 import { Button } from "@/components/ui/button";
+
+import { useBrand } from "@/lib/useBrand";
+import { SectionBackground } from "@/components/ui/SectionBackground";
 
 interface HeroProps {
   eyebrow?: string;
@@ -22,8 +27,16 @@ export default function Hero({
   primaryCta = { label: "Call Now", href: `tel:${siteConfig.phone}` },
   secondaryCta = { label: "Get a Free Quote", href: "/quote" },
 }: HeroProps) {
+  const { isSecurity } = useBrand();
+
   return (
-    <section className="relative overflow-hidden gradient-brand" aria-label="Hero">
+    <section className="relative overflow-hidden" aria-label="Hero">
+      <SectionBackground
+        src={isSecurity ? "/images/security-hero-bg.webp" : "/images/hero-bg.webp"}
+        alt={isSecurity ? "Sabari Security Systems Installation" : "Professional Electrical and Plumbing Panels"}
+        overlayClassName={isSecurity ? "bg-security-primary/92" : "bg-warm-white/88"}
+        priority
+      />
       <div className="section-container relative z-10 py-20 md:py-28 lg:py-32">
         <div className="grid grid-cols-1 lg:grid-cols-[1.15fr_1fr] gap-12 lg:gap-8 items-center">
           {/* Left: headline, subhead, CTAs */}

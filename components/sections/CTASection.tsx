@@ -1,7 +1,11 @@
+"use client";
+
 import Link from "next/link";
 import { Phone, ArrowRight } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 import { Button } from "@/components/ui/button";
+import { useBrand } from "@/lib/useBrand";
+import { SectionBackground } from "@/components/ui/SectionBackground";
 
 interface CTASectionProps {
   heading?: string;
@@ -24,6 +28,7 @@ export default function CTASection({
   secondaryHref = "/quote",
   variant = "dark",
 }: CTASectionProps) {
+  const { isSecurity } = useBrand();
   if (variant === "light") {
     return (
       <section className="section-padding section-alt" aria-labelledby="cta-light-heading">
@@ -50,8 +55,13 @@ export default function CTASection({
   }
 
   return (
-    <section className="section-padding gradient-brand" aria-labelledby="cta-heading">
-      <div className="section-container">
+    <section className="section-padding relative overflow-hidden" aria-labelledby="cta-heading">
+      <SectionBackground
+        src={isSecurity ? "/images/security-hero-bg.webp" : "/images/cta-bg.webp"}
+        alt="Service call-out background"
+        overlayClassName={isSecurity ? "bg-security-primary/95" : "bg-graphite/92"}
+      />
+      <div className="section-container relative z-10">
         <div className="max-w-3xl mx-auto text-center">
           <h2 id="cta-heading" className="text-white mb-4">
             {heading}
