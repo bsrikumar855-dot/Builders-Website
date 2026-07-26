@@ -508,6 +508,7 @@ const shreekumarServices: Service[] = [
     icon: "Building2",
     featured: false,
     relatedSlugs: ["water-tank-installation", "pipe-leak-repair"],
+  }
 ];
 
 export const services: Service[] = [

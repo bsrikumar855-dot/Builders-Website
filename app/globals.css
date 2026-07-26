@@ -161,15 +161,15 @@
   .text-pretty { text-wrap: pretty; }
   
   .gradient-brand {
-    background: linear-gradient(135deg, hsl(var(--graphite-deep)) 0%, hsl(var(--graphite)) 60%, hsl(var(--graphite-lifted)) 100%);
+    background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 50%, #E2E8F0 100%);
   }
 
   .gradient-hero {
-    background: linear-gradient(160deg, hsl(var(--graphite-deep)) 0%, hsl(var(--graphite)) 50%, hsl(var(--graphite-lifted)) 100%);
+    background: linear-gradient(160deg, #F8FAFC 0%, #F1F5F9 50%, #E2E8F0 100%);
   }
 
   .hero-overlay {
-    background: linear-gradient(to right, hsl(var(--graphite) / 0.92) 0%, hsl(var(--graphite) / 0.7) 60%, hsl(var(--graphite) / 0.4) 100%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.75) 60%, rgba(255, 255, 255, 0.4) 100%);
   }
 
   .section-alt {
@@ -197,3 +197,5 @@
   animation: pulse-ring 1.5s ease-out infinite;
   opacity: 0.3;
 }
+
+

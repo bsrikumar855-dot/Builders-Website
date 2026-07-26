@@ -67,9 +67,9 @@ export default function BlogCategoryPage({ params }: Props) {
 
       <section className="gradient-brand py-16 md:py-20" aria-labelledby="blog-category-heading">
         <div className="section-container text-center">
-          <p className="text-amber-400 text-xs font-bold uppercase tracking-widest mb-3">Blog Category</p>
-          <h1 id="blog-category-heading" className="text-white mb-4">{categoryLabels[category]} Articles</h1>
-          <p className="text-blue-100 text-lg max-w-2xl mx-auto">{categoryDescriptions[category]}</p>
+          <p className="text-copper text-xs font-bold uppercase tracking-widest mb-3">Blog Category</p>
+          <h1 id="blog-category-heading" className="text-graphite mb-4">{categoryLabels[category]} Articles</h1>
+          <p className="text-slate-600 text-lg max-w-2xl mx-auto">{categoryDescriptions[category]}</p>
         </div>
       </section>
 

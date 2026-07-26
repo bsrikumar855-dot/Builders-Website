@@ -31,7 +31,7 @@ export default function BlogClient() {
             aria-pressed={activeFilter === f.value}
             className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 ${
               activeFilter === f.value
-                ? "gradient-brand text-white shadow-md"
+                ? "bg-slate-900 text-white shadow-md"
                 : "bg-white border border-slate-200 text-slate-600 hover:border-blue-300 hover:text-blue-800"
             }`}
           >

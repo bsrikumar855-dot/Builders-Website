@@ -40,10 +40,10 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
     <section className="section-padding gradient-brand" aria-labelledby="testimonials-heading">
       <div className="section-container">
         <div className="text-center mb-12">
-          <h2 id="testimonials-heading" className="text-warm-white mb-3">
+          <h2 id="testimonials-heading" className="text-graphite mb-3">
             What Our Customers Say
           </h2>
-          <p className="text-warm-white/70">Real feedback from real Coimbatore customers</p>
+          <p className="text-slate-500">Real feedback from real Coimbatore customers</p>
         </div>
 
         <div className="relative max-w-3xl mx-auto">
@@ -59,34 +59,34 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
             {testimonials.map((t) => (
               <article
                 key={t.id}
-                className="snap-center shrink-0 w-full bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 md:p-10 relative"
+                className="snap-center shrink-0 w-full bg-white/80 backdrop-blur-md border border-slate-100/80 rounded-2xl p-8 md:p-10 relative shadow-lg"
               >
-                <Quote className="absolute top-6 left-6 w-10 h-10 text-white/20" aria-hidden="true" />
+                <Quote className="absolute top-6 left-6 w-10 h-10 text-slate-100" aria-hidden="true" />
 
                 <div className="flex gap-1 mb-6" aria-label={`Rating: ${t.rating} out of 5 stars`}>
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star
                       key={i}
-                      className={cn("w-5 h-5", i < t.rating ? "text-voltage fill-voltage" : "text-white/20")}
+                      className={cn("w-5 h-5", i < t.rating ? "text-voltage fill-voltage" : "text-slate-200")}
                       aria-hidden="true"
                     />
                   ))}
                 </div>
 
-                <blockquote className="text-lg md:text-xl text-warm-white leading-relaxed mb-8 text-pretty">
+                <blockquote className="text-lg md:text-xl text-graphite leading-relaxed mb-8 text-pretty">
                   &ldquo;{t.text}&rdquo;
                 </blockquote>
 
                 <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full gradient-brand border-2 border-white/40 flex items-center justify-center text-warm-white font-bold text-lg">
+                  <div className="w-12 h-12 rounded-full bg-graphite flex items-center justify-center text-warm-white font-bold text-lg">
                     {t.name[0]}
                   </div>
                   <div>
-                    <p className="font-bold text-warm-white">{t.name}</p>
-                    <p className="text-sm text-warm-white/60">{t.location}</p>
+                    <p className="font-bold text-graphite">{t.name}</p>
+                    <p className="text-sm text-slate-500">{t.location}</p>
                   </div>
                   {t.verified && (
-                    <span className="ml-auto text-xs bg-green-500/20 text-green-300 border border-green-500/30 px-3 py-1 rounded-full font-semibold">
+                    <span className="ml-auto text-xs bg-green-50 text-green-700 border border-green-200 px-3 py-1 rounded-full font-semibold">
                       Verified Customer
                     </span>
                   )}
@@ -101,7 +101,7 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
               onClick={() => scrollToIndex(activeIndex - 1)}
               disabled={activeIndex === 0}
               aria-label="Previous testimonial"
-              className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 disabled:opacity-30 disabled:cursor-not-allowed border border-white/20 flex items-center justify-center text-warm-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+              className="w-10 h-10 rounded-full bg-white hover:bg-slate-50 disabled:opacity-30 disabled:cursor-not-allowed border border-slate-200 flex items-center justify-center text-graphite transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 shadow-sm"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
@@ -114,7 +114,7 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
                   aria-label={`Go to testimonial ${i + 1}`}
                   className={cn(
                     "rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-                    i === activeIndex ? "w-8 h-2.5 bg-voltage" : "w-2.5 h-2.5 bg-white/30 hover:bg-white/50"
+                    i === activeIndex ? "w-8 h-2.5 bg-voltage" : "w-2.5 h-2.5 bg-slate-200 hover:bg-slate-300"
                   )}
                 />
               ))}
@@ -124,7 +124,7 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
               onClick={() => scrollToIndex(activeIndex + 1)}
               disabled={activeIndex === testimonials.length - 1}
               aria-label="Next testimonial"
-              className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 disabled:opacity-30 disabled:cursor-not-allowed border border-white/20 flex items-center justify-center text-warm-white transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+              className="w-10 h-10 rounded-full bg-white hover:bg-slate-50 disabled:opacity-30 disabled:cursor-not-allowed border border-slate-200 flex items-center justify-center text-graphite transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 shadow-sm"
             >
               <ChevronRight className="w-5 h-5" />
             </button>

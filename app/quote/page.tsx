@@ -17,14 +17,14 @@ export default function QuotePage() {
       {/* Header */}
       <section className="gradient-brand py-16 md:py-20" aria-labelledby="quote-heading">
         <div className="section-container max-w-3xl mx-auto text-center">
-          <p className="text-amber-400 text-xs font-bold uppercase tracking-widest mb-3">Free Estimate</p>
-          <h1 id="quote-heading" className="text-white mb-4">Request a Free Quote</h1>
-          <p className="text-blue-100 text-lg mb-6">
+          <p className="text-copper text-xs font-bold uppercase tracking-widest mb-3">Free Estimate</p>
+          <h1 id="quote-heading" className="text-graphite mb-4">Request a Free Quote</h1>
+          <p className="text-slate-600 text-lg mb-6">
             Fill in the form below and we will review your details and call you to arrange a free site visit. All estimates are written, itemised, and carry no obligation.
           </p>
-          <div className="inline-flex items-center gap-3 bg-red-500/20 border border-red-400/40 text-red-200 rounded-xl px-5 py-3 text-sm font-semibold">
+          <div className="inline-flex items-center gap-3 bg-red-50 border border-red-200 text-red-800 rounded-xl px-5 py-3 text-sm font-semibold">
             For electrical faults, burst pipes, or emergencies — call us immediately:{" "}
-            <a href={`tel:${siteConfig.phone}`} className="text-white underline hover:no-underline ml-1">
+            <a href={`tel:${siteConfig.phone}`} className="text-red-900 font-bold underline hover:no-underline ml-1">
               {siteConfig.phone}
             </a>
           </div>

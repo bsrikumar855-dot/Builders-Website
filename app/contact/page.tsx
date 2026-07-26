@@ -17,9 +17,9 @@ export default function ContactPage() {
       {/* Header */}
       <section className="gradient-brand py-16 md:py-20" aria-labelledby="contact-heading">
         <div className="section-container text-center max-w-2xl mx-auto">
-          <p className="text-amber-400 text-xs font-bold uppercase tracking-widest mb-3">Get In Touch</p>
-          <h1 id="contact-heading" className="text-white mb-4">Contact Us</h1>
-          <p className="text-blue-100 text-lg">
+          <p className="text-copper text-xs font-bold uppercase tracking-widest mb-3">Get In Touch</p>
+          <h1 id="contact-heading" className="text-graphite mb-4">Contact Us</h1>
+          <p className="text-slate-600 text-lg">
             For emergencies, call immediately. For planned work and quote requests, use the form below.
           </p>
         </div>

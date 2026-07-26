@@ -34,13 +34,13 @@ export default function Hero({
                 </p>
               )
             }
-            headlineLines={headlineLines.map((line) => (
-              <span key={line} className="block font-display text-display-xl text-warm-white text-balance">
+             headlineLines={headlineLines.map((line) => (
+              <span key={line} className="block font-display text-display-xl text-graphite text-balance">
                 {line}
               </span>
             ))}
             subhead={
-              <p className="text-lg md:text-xl text-warm-white/75 leading-relaxed mt-6 mb-10 max-w-xl text-pretty">
+              <p className="text-lg md:text-xl text-slate-body leading-relaxed mt-6 mb-10 max-w-xl text-pretty">
                 {subheadline}
               </p>
             }
@@ -54,13 +54,13 @@ export default function Hero({
                     </Link>
                   </MagneticButton>
                   <MagneticButton>
-                    <Link href={secondaryCta.href} className="btn-ghost-white text-base px-8 py-4">
+                    <Link href={secondaryCta.href} className="btn-outline text-base px-8 py-4">
                       {secondaryCta.label}
                       <ArrowRight className="w-5 h-5" />
                     </Link>
                   </MagneticButton>
                 </div>
-                <p className="mt-6 text-xs text-warm-white/50">
+                <p className="mt-6 text-xs text-slate-500">
                   No call-out fee for estimates · Licence {siteConfig.licence}
                 </p>
               </div>
@@ -69,7 +69,7 @@ export default function Hero({
 
           {/* Right: signature element — the one place this motif appears decoratively at rest */}
           <div className="hidden lg:block relative h-72" aria-hidden="true">
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-white/[0.04] to-transparent" />
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-graphite/[0.04] to-transparent" />
             <SignatureLine variant="circuit" delay={HERO_SIGNATURE_DELAY} className="w-full h-full p-6" />
           </div>
         </div>

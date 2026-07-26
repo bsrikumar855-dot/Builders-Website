@@ -58,11 +58,11 @@ export default function AboutPage() {
       {/* Header */}
       <section className="gradient-brand py-16 md:py-24" aria-labelledby="about-heading">
         <div className="section-container text-center max-w-3xl mx-auto">
-          <p className="text-amber-400 text-xs font-bold uppercase tracking-widest mb-3">About Us</p>
-          <h1 id="about-heading" className="text-white mb-4">
+          <p className="text-copper text-xs font-bold uppercase tracking-widest mb-3">About Us</p>
+          <h1 id="about-heading" className="text-graphite mb-4">
             Coimbatore&apos;s Trusted Electrical & Plumbing Contractors Since 2008
           </h1>
-          <p className="text-blue-100 text-lg leading-relaxed">
+          <p className="text-slate-600 text-lg leading-relaxed">
             We are a family-run business built on honest advice, quality workmanship, and long-term relationships with our customers. Every job — from fitting a socket to wiring a factory — gets the same standard of care.
           </p>
         </div>

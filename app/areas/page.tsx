@@ -18,9 +18,9 @@ export default function AreasPage() {
     <>
       <section className="gradient-brand py-16 md:py-24" aria-labelledby="areas-page-heading">
         <div className="section-container text-center max-w-2xl mx-auto">
-          <p className="text-amber-400 text-xs font-bold uppercase tracking-widest mb-3">Service Coverage</p>
-          <h1 id="areas-page-heading" className="text-white mb-4">Areas We Serve</h1>
-          <p className="text-blue-100 text-lg">
+          <p className="text-copper text-xs font-bold uppercase tracking-widest mb-3">Service Coverage</p>
+          <h1 id="areas-page-heading" className="text-graphite mb-4">Areas We Serve</h1>
+          <p className="text-slate-600 text-lg">
             We cover all areas of Coimbatore city and district. Click your area below for local service information and availability.
           </p>
         </div>

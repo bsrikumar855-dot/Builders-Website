@@ -28,21 +28,20 @@ export default function PlumbingPage() {
   return (
     <>
       <section
-        className="py-16 md:py-24"
-        style={{ background: "linear-gradient(160deg, #0c4a6e 0%, #0369a1 60%, #0ea5e9 100%)" }}
+        className="py-16 md:py-24 gradient-brand"
         aria-labelledby="plumb-heading"
       >
         <div className="section-container">
           <div className="flex items-center gap-4 mb-6">
-            <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center">
-              <Droplets className="w-6 h-6 text-cyan-300" />
+            <div className="w-12 h-12 rounded-xl bg-copper/15 flex items-center justify-center">
+              <Droplets className="w-6 h-6 text-copper" />
             </div>
-            <span className="text-cyan-300 text-xs font-bold uppercase tracking-widest">Plumbing Services</span>
+            <span className="text-copper text-xs font-bold uppercase tracking-widest">Plumbing Services</span>
           </div>
-          <h1 id="plumb-heading" className="text-white mb-4 max-w-3xl">
+          <h1 id="plumb-heading" className="text-graphite mb-4 max-w-3xl">
             Professional Plumbing Services in Coimbatore
           </h1>
-          <p className="text-sky-100 text-lg max-w-2xl leading-relaxed mb-8">
+          <p className="text-slate-600 text-lg max-w-2xl leading-relaxed mb-8">
             Leak detection and repair, full bathroom and kitchen plumbing, water tank and pump installations, drain clearance, and commercial plumbing — all with a 5-year workmanship warranty.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">

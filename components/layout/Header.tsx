@@ -67,27 +67,19 @@ export default function Header() {
     (s) => s.brand === "sabari" && ["cctv-monitoring", "manned-guarding", "security-amc"].includes(s.slug)
   );
 
-  // Unscrolled state keeps a soft graphite scrim (not full transparency) so
-  // header text stays legible even on the rare page whose top section isn't
-  // a dark hero — it still reads as "transparent over hero" everywhere else.
   const navLinkClass = cn(
     "px-4 py-2 rounded-lg text-sm font-semibold transition-colors",
     "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-    scrolled ? "text-slate-body hover:text-graphite hover:bg-graphite/5" : "text-warm-white/90 hover:text-warm-white hover:bg-white/10"
+    "text-slate-body hover:text-graphite hover:bg-graphite/5"
   );
 
   return (
     <>
       <header
-        className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-colors duration-300",
-          scrolled
-            ? "bg-warm-white/95 backdrop-blur-md border-b border-graphite/10 shadow-sm"
-            : "bg-gradient-to-b from-graphite/55 via-graphite/25 to-transparent"
-        )}
+        className="fixed top-0 left-0 right-0 z-50 border-b border-slate-200/50 bg-white/70 backdrop-blur-lg shadow-sm"
       >
         {/* Discreet Brand Switcher inside the header so it remains fixed */}
-        <BrandSwitcher />
+        <BrandSwitcher scrolled={true} />
 
         <div className="section-container">
           <div className="flex items-center justify-between h-16 md:h-20">
@@ -104,10 +96,10 @@ export default function Header() {
                 S
               </div>
               <div className="leading-tight">
-                <p className={cn("font-display font-bold text-base leading-none transition-colors", scrolled ? "text-graphite" : "text-warm-white")}>
+                <p className="font-display font-bold text-base leading-none transition-colors text-graphite">
                   {isSecurity ? "Sabari" : "Shreekumar"}
                 </p>
-                <p className={cn("text-xs font-medium tracking-wide transition-colors", scrolled ? "text-slate-body" : "text-warm-white/70")}>
+                <p className="text-xs font-medium tracking-wide transition-colors text-slate-body">
                   {isSecurity ? "SECURITY" : "BUILDERS"}
                 </p>
               </div>
@@ -250,11 +242,7 @@ export default function Header() {
             <div className="hidden lg:flex items-center gap-3">
               <Link
                 href={`tel:${config.phone}`}
-                className={cn(
-                  "flex items-center gap-2 text-sm font-bold font-mono tracking-wide transition-colors rounded-lg px-2 py-1",
-                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-                  scrolled ? "text-graphite" : "text-warm-white"
-                )}
+                className="flex items-center gap-2 text-sm font-bold font-mono tracking-wide transition-colors rounded-lg px-2 py-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 text-graphite"
               >
                 <Phone className="w-4 h-4" />
                 <span>{config.phone}</span>
@@ -277,21 +265,13 @@ export default function Header() {
               <Link
                 href={`tel:${config.phone}`}
                 aria-label={`Call us at ${config.phone}`}
-                className={cn(
-                  "flex items-center gap-1.5 px-2 py-2 rounded-lg text-xs font-bold font-mono tracking-wide transition-colors",
-                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-                  scrolled ? "text-graphite" : "text-warm-white"
-                )}
+                className="flex items-center gap-1.5 px-2 py-2 rounded-lg text-xs font-bold font-mono tracking-wide transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 text-graphite"
               >
                 <Phone className="w-4 h-4" />
                 <span className="hidden sm:inline">{config.phone}</span>
               </Link>
               <button
-                className={cn(
-                  "p-2 rounded-lg transition-colors",
-                  "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-                  scrolled ? "text-graphite hover:bg-graphite/5" : "text-warm-white hover:bg-white/10"
-                )}
+                className="p-2 rounded-lg transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 text-graphite hover:bg-graphite/5"
                 onClick={() => setMobileOpen(true)}
                 aria-label="Open mobile menu"
                 aria-expanded={mobileOpen}

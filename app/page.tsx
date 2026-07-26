@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+
 import Link from "next/link";
 import { Phone, ArrowRight, CheckCircle, MapPin } from "lucide-react";
 import Hero from "@/components/sections/Hero";

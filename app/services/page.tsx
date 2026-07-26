@@ -24,8 +24,8 @@ export default function ServicesPage() {
       <section className="gradient-brand py-16 md:py-24" aria-labelledby="services-page-heading">
         <div className="section-container text-center">
           <p className="text-voltage text-xs font-bold uppercase tracking-widest mb-3">What We Offer</p>
-          <h1 id="services-page-heading" className="text-warm-white mb-4">Our Services</h1>
-          <p className="text-warm-white/75 max-w-2xl mx-auto text-lg">
+          <h1 id="services-page-heading" className="text-graphite mb-4">Our Services</h1>
+          <p className="text-slate-600 max-w-2xl mx-auto text-lg">
             Licensed electrical and plumbing services for residential and commercial properties in Coimbatore.
             All work comes with a 5-year workmanship warranty and free written estimates.
           </p>

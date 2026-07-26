@@ -30,15 +30,15 @@ export default function ElectricalPage() {
       <section className="gradient-brand py-16 md:py-24" aria-labelledby="elec-heading">
         <div className="section-container">
           <div className="flex items-center gap-4 mb-6">
-            <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center">
-              <Zap className="w-6 h-6 text-amber-400" />
+            <div className="w-12 h-12 rounded-xl bg-voltage/15 flex items-center justify-center">
+              <Zap className="w-6 h-6 text-voltage" />
             </div>
-            <span className="text-amber-400 text-xs font-bold uppercase tracking-widest">Electrical Services</span>
+            <span className="text-voltage text-xs font-bold uppercase tracking-widest">Electrical Services</span>
           </div>
-          <h1 id="elec-heading" className="text-white mb-4 max-w-3xl">
+          <h1 id="elec-heading" className="text-graphite mb-4 max-w-3xl">
             Licensed Electrical Services in Coimbatore
           </h1>
-          <p className="text-blue-100 text-lg max-w-2xl leading-relaxed mb-8">
+          <p className="text-slate-600 text-lg max-w-2xl leading-relaxed mb-8">
             From simple socket additions to full house rewires, our certified electricians complete every job to IS standards — with a 5-year warranty on all workmanship.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">

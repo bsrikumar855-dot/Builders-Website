@@ -66,14 +66,14 @@ export default function ServicePage({ params }: Props) {
                 {service.category.charAt(0).toUpperCase() + service.category.slice(1)}
               </span>
             </div>
-            <h1 id="svc-heading" className="text-white mb-4">{service.name}</h1>
-            <p className="text-blue-100 text-lg leading-relaxed mb-8 max-w-2xl">{service.tagline}</p>
+            <h1 id="svc-heading" className="text-graphite mb-4">{service.name}</h1>
+            <p className="text-slate-600 text-lg leading-relaxed mb-8 max-w-2xl">{service.tagline}</p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href={`tel:${siteConfig.phone}`} className="btn-accent px-8 py-4 text-base">
                 <Phone className="w-5 h-5" />
                 Call Now: {siteConfig.phone}
               </Link>
-              <Link href="/quote" className="btn-ghost-white px-8 py-4 text-base">
+              <Link href="/quote" className="btn-outline px-8 py-4 text-base">
                 Get a Free Quote <ArrowRight className="w-5 h-5" />
               </Link>
             </div>

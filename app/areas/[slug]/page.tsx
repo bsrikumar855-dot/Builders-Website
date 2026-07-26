@@ -40,19 +40,19 @@ export default function AreaPage({ params }: Props) {
       {/* Hero */}
       <section className="gradient-brand py-16 md:py-24" aria-labelledby="area-heading">
         <div className="section-container max-w-3xl">
-          <div className="flex items-center gap-2 text-blue-300 text-sm mb-4">
-            <Link href="/areas" className="hover:text-white transition-colors">Areas</Link>
+          <div className="flex items-center gap-2 text-slate-500 text-sm mb-4">
+            <Link href="/areas" className="hover:text-graphite transition-colors">Areas</Link>
             <span>/</span>
-            <span className="text-white">{area.name}</span>
+            <span className="text-graphite font-semibold">{area.name}</span>
           </div>
           <div className="flex items-center gap-3 mb-4">
-            <MapPin className="w-6 h-6 text-amber-400" />
-            <span className="text-amber-400 text-sm font-semibold">{area.district}, Tamilnadu</span>
+            <MapPin className="w-6 h-6 text-copper" />
+            <span className="text-copper text-sm font-semibold">{area.district}, Tamilnadu</span>
           </div>
-          <h1 id="area-heading" className="text-white mb-4">
+          <h1 id="area-heading" className="text-graphite mb-4">
             Electrician & Plumber in {area.name}
           </h1>
-          <p className="text-blue-100 text-lg leading-relaxed mb-8 max-w-2xl">
+          <p className="text-slate-600 text-lg leading-relaxed mb-8 max-w-2xl">
             {area.description}
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
@@ -60,7 +60,7 @@ export default function AreaPage({ params }: Props) {
               <Phone className="w-5 h-5" />
               Call Now: {siteConfig.phone}
             </Link>
-            <Link href="/quote" className="btn-ghost-white px-8 py-4">
+            <Link href="/quote" className="btn-outline px-8 py-4">
               Get a Free Quote
             </Link>
           </div>
