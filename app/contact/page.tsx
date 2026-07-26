@@ -35,6 +35,9 @@ export default function ContactPage() {
             </a>
             {" "}— Do not use the form for emergencies.
           </p>
+          <p className="text-xs mt-1 text-white/80 font-medium tracking-wide">
+            Licence No: {siteConfig.licence}
+          </p>
         </div>
       </div>
 

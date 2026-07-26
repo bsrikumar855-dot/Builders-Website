@@ -23,11 +23,14 @@ export default function QuotePage() {
           <p className="text-warm-white/80 text-lg mb-6">
             Fill in the form below to request a detailed on-site assessment of your cameras, alarms, and access vulnerabilities.
           </p>
-          <div className="inline-flex items-center gap-3 bg-red-500/20 border border-red-400/40 text-red-200 rounded-xl px-5 py-3 text-sm font-semibold">
-            For urgent system offline faults or emergency support — call immediately:{" "}
-            <a href={`tel:${siteConfig.phone}`} className="text-white font-bold underline hover:no-underline ml-1">
-              {siteConfig.phone}
-            </a>
+          <div className="inline-flex items-center gap-3 bg-red-500/20 border border-red-400/40 text-red-200 rounded-xl px-5 py-3 text-sm font-semibold text-left">
+            <div>
+              For urgent system offline faults or emergency support — call immediately:{" "}
+              <a href={`tel:${siteConfig.phone}`} className="text-white font-bold underline hover:no-underline ml-1">
+                {siteConfig.phone}
+              </a>
+              <p className="text-xs font-normal opacity-90 mt-1">Licence No: {siteConfig.brands.sabari.licence}</p>
+            </div>
           </div>
         </div>
       </section>

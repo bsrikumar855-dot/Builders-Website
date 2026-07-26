@@ -35,6 +35,9 @@ export default function ContactPage() {
             </a>
             {" "}— Priority response under AMC.
           </p>
+          <p className="text-xs mt-1 text-white/80 font-medium tracking-wide">
+            Licence No: {siteConfig.brands.sabari.licence}
+          </p>
         </div>
       </div>
 
