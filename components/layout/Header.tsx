@@ -10,6 +10,7 @@ import MobileNav from "./MobileNav";
 import { cn } from "@/lib/utils";
 import { useBrand } from "@/lib/useBrand";
 import BrandSwitcher from "./BrandSwitcher";
+import { Button } from "@/components/ui/button";
 
 const shreekumarNavLinks = [
   { label: "Services", href: "/services", hasDropdown: true },
@@ -247,17 +248,15 @@ export default function Header() {
                 <Phone className="w-4 h-4" />
                 <span>{config.phone}</span>
               </Link>
-              <Link
-                href={isSecurity ? "/security/quote" : "/quote"}
-                className={cn(
-                  "text-sm px-5 py-2.5 font-semibold active:scale-95 transition-all duration-200 rounded-lg shadow-md hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-                  isSecurity
-                    ? "text-warm-white bg-security-primary hover:bg-security-accent"
-                    : "btn-primary"
-                )}
+              <Button
+                variant={btnPrimaryClass}
+                asChild
+                className="text-sm px-5 py-2.5 active:scale-95 transition-all duration-200 shadow-md hover:shadow-lg"
               >
-                {isSecurity ? "Book a Survey" : "Get a Quote"}
-              </Link>
+                <Link href={isSecurity ? "/security/quote" : "/quote"}>
+                  {isSecurity ? "Book a Survey" : "Get a Quote"}
+                </Link>
+              </Button>
             </div>
 
             {/* Mobile: phone always visible + menu toggle */}

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Home, Phone } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
+import { Button } from "@/components/ui/button";
 
 export default function NotFound() {
   return (
@@ -12,12 +13,16 @@ export default function NotFound() {
           The page you are looking for doesn&apos;t exist. If you need immediate help with an electrical or plumbing problem, call us now.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link href="/" className="btn-primary">
-            <Home className="w-5 h-5" /> Go Home
-          </Link>
-          <Link href={`tel:${siteConfig.phone}`} className="btn-accent">
-            <Phone className="w-5 h-5" /> Call Now
-          </Link>
+          <Button variant="graphite" asChild className="px-6 py-4">
+            <Link href="/">
+              <Home className="w-5 h-5" /> Go Home
+            </Link>
+          </Button>
+          <Button variant="voltage" asChild className="px-6 py-4">
+            <Link href={`tel:${siteConfig.phone}`}>
+              <Phone className="w-5 h-5" /> Call Now
+            </Link>
+          </Button>
         </div>
       </div>
     </div>

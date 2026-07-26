@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { ChevronRight, ArrowRight, Clock, Calendar } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { posts, getPostBySlug, getRelatedPosts } from "@/data/blog-posts";
 import { services } from "@/data/services";
 import ArticleContent from "@/components/sections/ArticleContent";
@@ -137,9 +138,11 @@ export default function BlogPostPage({ params }: Props) {
               <p className="font-bold text-graphite mb-1">Facing this issue right now?</p>
               <p className="text-sm text-graphite">Get a free estimate — no call-out fee, no obligation.</p>
             </div>
-            <Link href="/quote" className="btn-accent shrink-0 whitespace-nowrap">
-              Get a Free Estimate <ArrowRight className="w-4 h-4" />
-            </Link>
+            <Button variant="voltage" asChild className="shrink-0 whitespace-nowrap px-6 py-4">
+              <Link href="/quote">
+                Get a Free Estimate <ArrowRight className="w-4 h-4" />
+              </Link>
+            </Button>
           </div>
         </div>
 

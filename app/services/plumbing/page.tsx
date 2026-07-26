@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Droplets, CheckCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import ServiceCard from "@/components/sections/ServiceCard";
 import CTASection from "@/components/sections/CTASection";
 import { getServicesByCategory } from "@/data/services";
@@ -45,12 +46,16 @@ export default function PlumbingPage() {
             Leak detection and repair, full bathroom and kitchen plumbing, water tank and pump installations, drain clearance, and commercial plumbing — all with a 5-year workmanship warranty.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link href={`tel:${siteConfig.phone}`} className="btn-accent">
-              Call: {siteConfig.phone}
-            </Link>
-            <Link href="/quote" className="btn-ghost-white">
-              Get a Free Quote <ArrowRight className="w-4 h-4" />
-            </Link>
+            <Button variant="voltage" asChild className="px-6 py-4">
+              <Link href={`tel:${siteConfig.phone}`}>
+                Call: {siteConfig.phone}
+              </Link>
+            </Button>
+            <Button variant="ghostWhite" asChild className="px-6 py-4">
+              <Link href="/quote">
+                Get a Free Quote <ArrowRight className="w-4 h-4" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -61,22 +66,29 @@ export default function PlumbingPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 id="plumb-why-heading" className="text-graphite mb-6">
-                The Cost of Poor Plumbing
+                Why Choose a Licensed Plumber?
               </h2>
               <p className="text-slate-body mb-6 leading-relaxed">
-                A small undetected leak can cause structural damage worth lakhs of rupees within months. Poor drainage design leads to recurring blockages. Our team uses proper materials, correct jointing techniques, and always tests before closing walls.
+                Poorly installed pipework and unvented drains cause costly water damage, dampness, and health issues. Our licensed plumbers ensure correct gradient runs, code-compliant venting, and sound solder or compression joins.
               </p>
               <ul className="space-y-3">
-                {plumbingHighlights.map((item) => (
+                {[
+                  "All work carried out by fully qualified, licensed plumbers",
+                  "Advanced leak location technology and pipeline cameras",
+                  "Clear, upfront, written quote with zero hidden extras",
+                  "5-year guarantee on every pipe run and joint",
+                ].map((item) => (
                   <li key={item} className="flex items-start gap-3 text-sm text-graphite">
-                    <CheckCircle className="w-5 h-5 text-security-accent shrink-0 mt-0.5" />
+                    <CheckCircle className="w-5 h-5 text-voltage shrink-0 mt-0.5" />
                     {item}
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="bg-white rounded-2xl border border-warm-white p-6 space-y-4">
-              <p className="text-sm font-bold text-graphite mb-4">Emergency Plumbing — Call Immediately If You See:</p>
+
+            {/* Emergency box */}
+            <div className="bg-white rounded-2xl border border-warm-white p-6 space-y-4 shadow-sm">
+              <p className="text-sm font-bold text-graphite mb-4">Emergency Plumbing Warning Signs</p>
               {[
                 "Burst pipe flooding a room or underfloor",
                 "Raw sewage overflow in bathroom or drain",
@@ -89,9 +101,11 @@ export default function PlumbingPage() {
                   {sign}
                 </div>
               ))}
-              <Link href={`tel:${siteConfig.phone}`} className="btn-primary w-full justify-center mt-4">
-                Call Now — Emergency Response
-              </Link>
+              <Button variant="graphite" asChild className="w-full justify-center mt-4 py-6">
+                <Link href={`tel:${siteConfig.phone}`}>
+                  Call Now — Emergency Response
+                </Link>
+              </Button>
             </div>
           </div>
         </div>

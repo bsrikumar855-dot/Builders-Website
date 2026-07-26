@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { Phone, CheckCircle, ArrowRight, IndianRupee } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { getServiceBySlug, services } from "@/data/services";
 import { getPostsByServiceSlug } from "@/data/blog-posts";
 import ProcessSteps from "@/components/sections/ProcessSteps";
@@ -69,13 +70,17 @@ export default function ServicePage({ params }: Props) {
             <h1 id="svc-heading" className="text-graphite mb-4">{service.name}</h1>
             <p className="text-slate-body text-lg leading-relaxed mb-8 max-w-2xl">{service.tagline}</p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href={`tel:${siteConfig.phone}`} className="btn-accent px-8 py-4 text-base">
-                <Phone className="w-5 h-5" />
-                Call Now: {siteConfig.phone}
-              </Link>
-              <Link href="/quote" className="btn-outline px-8 py-4 text-base">
-                Get a Free Quote <ArrowRight className="w-5 h-5" />
-              </Link>
+              <Button variant="voltage" asChild className="px-8 py-6 text-base shadow-md">
+                <Link href={`tel:${siteConfig.phone}`}>
+                  <Phone className="w-5 h-5" />
+                  Call Now: {siteConfig.phone}
+                </Link>
+              </Button>
+              <Button variant="outline" asChild className="px-8 py-6 text-base">
+                <Link href="/quote">
+                  Get a Free Quote <ArrowRight className="w-5 h-5" />
+                </Link>
+              </Button>
             </div>
           </div>
         </div>
@@ -134,9 +139,11 @@ export default function ServicePage({ params }: Props) {
               <p className="font-bold text-sm">Free Written Estimate</p>
               <p className="text-xs text-security-accent">No call-out fee. We visit, assess, and provide a written quote with no obligation.</p>
             </div>
-            <Link href="/quote" className="btn-accent ml-4 text-sm px-5 py-2.5 shrink-0">
-              Get a Quote
-            </Link>
+            <Button variant="voltage" asChild className="ml-4 text-sm px-5 py-3.5 shrink-0">
+              <Link href="/quote">
+                Get a Quote
+              </Link>
+            </Button>
           </div>
         </div>
       </section>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Zap, Droplets } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import ServicesBento from "@/components/sections/ServicesBento";
 import CTASection from "@/components/sections/CTASection";
 import SignatureLine from "@/components/motion/SignatureLine";
@@ -51,16 +52,18 @@ export default function ServicesPage() {
           </p>
           <ServicesBento services={electrical} />
           <div className="mt-6 text-center">
-            <Link href="/services/electrical" className="btn-outline">
-              Electrical Services Overview <ArrowRight className="w-4 h-4" />
-            </Link>
+            <Button variant="outline" asChild className="px-6 py-4">
+              <Link href="/services/electrical">
+                Electrical Services Overview <ArrowRight className="w-4 h-4" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
 
       {/* Signature scroll transition: circuit trace (electrical) morphs into a
           pipe run (plumbing) as the user scrolls through this divider. The
-          only place this motif is used decoratively/interactively beyond the
+          only place this motif is used interactively/interactively beyond the
           hero — kept rare on purpose. */}
       <div className="section-container">
         <SignatureLine variant="circuit" morph className="w-full h-56 md:h-72" />
@@ -85,9 +88,11 @@ export default function ServicesPage() {
           </p>
           <ServicesBento services={plumbing} />
           <div className="mt-6 text-center">
-            <Link href="/services/plumbing" className="btn-outline">
-              Plumbing Services Overview <ArrowRight className="w-4 h-4" />
-            </Link>
+            <Button variant="outline" asChild className="px-6 py-4">
+              <Link href="/services/plumbing">
+                Plumbing Services Overview <ArrowRight className="w-4 h-4" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>

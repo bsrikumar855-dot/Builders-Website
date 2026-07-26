@@ -8,6 +8,7 @@ import ServicesBento from "@/components/sections/ServicesBento";
 import ProcessSteps from "@/components/sections/ProcessSteps";
 import TestimonialCarousel from "@/components/sections/TestimonialCarousel";
 import CTASection from "@/components/sections/CTASection";
+import { Button } from "@/components/ui/button";
 import ProjectCard from "@/components/sections/ProjectCard";
 import { getFeaturedServices } from "@/data/services";
 import { getFeaturedProjects } from "@/data/projects";
@@ -86,12 +87,16 @@ export default function HomePage() {
                 ))}
               </ul>
               <div className="flex flex-col sm:flex-row gap-4 mt-10">
-                <Link href={`tel:${siteConfig.phone}`} className="btn-primary">
-                  <Phone className="w-5 h-5" /> Call Now
-                </Link>
-                <Link href="/about" className="btn-outline">
-                  About Us <ArrowRight className="w-4 h-4" />
-                </Link>
+                <Button variant="graphite" asChild className="px-6 py-4">
+                  <Link href={`tel:${siteConfig.phone}`}>
+                    <Phone className="w-5 h-5" /> Call Now
+                  </Link>
+                </Button>
+                <Button variant="outline" asChild className="px-6 py-4">
+                  <Link href="/about">
+                    About Us <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </Button>
               </div>
             </div>
 

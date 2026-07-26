@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { MapPin, ArrowRight, Zap, Droplets } from "lucide-react";
 import CTASection from "@/components/sections/CTASection";
+import { Button } from "@/components/ui/button";
 import { areas } from "@/data/areas";
 import { services } from "@/data/services";
 import { siteConfig } from "@/lib/site-config";
@@ -90,9 +91,11 @@ export default function AreasPage() {
             <p className="text-slate-body text-sm mb-4 max-w-lg mx-auto">
               We serve all of Coimbatore district. If your area isn&apos;t listed, call or message us — we almost certainly cover it.
             </p>
-            <Link href={`tel:${siteConfig.phone}`} className="btn-primary">
-              Call: {siteConfig.phone}
-            </Link>
+            <Button variant="graphite" asChild className="px-6 py-4">
+              <Link href={`tel:${siteConfig.phone}`}>
+                Call: {siteConfig.phone}
+              </Link>
+            </Button>
           </div>
         </div>
       </section>

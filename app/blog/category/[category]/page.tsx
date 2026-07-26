@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import BlogCard from "@/components/sections/BlogCard";
 import CTASection from "@/components/sections/CTASection";
 import { posts, getPostsByCategory } from "@/data/blog-posts";
@@ -85,9 +86,11 @@ export default function BlogCategoryPage({ params }: Props) {
             </div>
           )}
           <div className="mt-10 text-center">
-            <Link href="/blog" className="btn-outline">
-              View All Articles
-            </Link>
+            <Button variant="outline" asChild className="px-6 py-4">
+              <Link href="/blog">
+                View All Articles
+              </Link>
+            </Button>
           </div>
         </div>
       </section>

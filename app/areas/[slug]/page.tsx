@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { MapPin, Phone, CheckCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { getAreaBySlug, areas } from "@/data/areas";
 import { services } from "@/data/services";
 import ServiceCard from "@/components/sections/ServiceCard";
@@ -56,13 +57,17 @@ export default function AreaPage({ params }: Props) {
             {area.description}
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link href={`tel:${siteConfig.phone}`} className="btn-accent px-8 py-4">
-              <Phone className="w-5 h-5" />
-              Call Now: {siteConfig.phone}
-            </Link>
-            <Link href="/quote" className="btn-outline px-8 py-4">
-              Get a Free Quote
-            </Link>
+            <Button variant="voltage" asChild className="px-8 py-6">
+              <Link href={`tel:${siteConfig.phone}`}>
+                <Phone className="w-5 h-5" />
+                Call Now: {siteConfig.phone}
+              </Link>
+            </Button>
+            <Button variant="outline" asChild className="px-8 py-6">
+              <Link href="/quote">
+                Get a Free Quote
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -91,16 +96,15 @@ export default function AreaPage({ params }: Props) {
             {/* Emergency box */}
             <div className="bg-graphite rounded-2xl p-6 text-white">
               <h3 className="text-lg font-bold mb-3">Emergency Call-Out — {area.name}</h3>
-              <p className="text-warm-white/70 text-sm leading-relaxed mb-5">
+              <p className="text-warm-white/77 text-sm leading-relaxed mb-5">
                 For electrical faults, burst pipes, or sewage emergencies in {area.name}, call us immediately. We aim to attend within 2–4 hours of your call.
               </p>
-              <a
-                href={`tel:${siteConfig.phone}`}
-                className="btn-accent w-full justify-center text-base py-4"
-              >
-                <Phone className="w-5 h-5" />
-                {siteConfig.phone}
-              </a>
+              <Button variant="voltage" asChild className="w-full py-6 text-base shadow-lg">
+                <a href={`tel:${siteConfig.phone}`}>
+                  <Phone className="w-5 h-5" />
+                  {siteConfig.phone}
+                </a>
+              </Button>
               <p className="text-xs text-slate-body/50 text-center mt-3">
                 No call-out fee for emergency attendance in {area.name}
               </p>

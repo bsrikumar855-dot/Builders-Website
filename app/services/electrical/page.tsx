@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Zap, CheckCircle } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import ServiceCard from "@/components/sections/ServiceCard";
 import CTASection from "@/components/sections/CTASection";
 import { getServicesByCategory } from "@/data/services";
@@ -42,12 +43,16 @@ export default function ElectricalPage() {
             From simple socket additions to full house rewires, our certified electricians complete every job to IS standards — with a 5-year warranty on all workmanship.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link href={`tel:${siteConfig.phone}`} className="btn-accent">
-              <span className="font-semibold">Call: {siteConfig.phone}</span>
-            </Link>
-            <Link href="/quote" className="btn-ghost-white">
-              Get a Free Quote <ArrowRight className="w-4 h-4" />
-            </Link>
+            <Button variant="voltage" asChild className="px-6 py-4">
+              <Link href={`tel:${siteConfig.phone}`}>
+                Call: {siteConfig.phone}
+              </Link>
+            </Button>
+            <Button variant="ghostWhite" asChild className="px-6 py-4">
+              <Link href="/quote">
+                Get a Free Quote <ArrowRight className="w-4 h-4" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -58,37 +63,54 @@ export default function ElectricalPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h2 id="elec-why-heading" className="text-graphite mb-6">
-                Why Choose a Licensed Electrician?
+                Coimbatore&apos;s Preferred Residential Electricians
               </h2>
-              <p className="text-slate-body mb-6 leading-relaxed">
-                Electrical work done by unlicensed contractors is a leading cause of domestic fires in India. Our work is performed by certified electricians, uses ISI-marked materials, and is tested before hand-over — protecting your family, your property, and your insurance policy.
+              <p className="text-slate-body leading-relaxed mb-6">
+                From emergency fixes to full-scale renovations, we are local, responsive, and take immense pride in delivering tidy work that exceeds safety codes.
               </p>
-              <ul className="space-y-3">
-                {electricalHighlights.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-graphite">
-                    <CheckCircle className="w-5 h-5 text-security-accent shrink-0 mt-0.5" />
-                    {item}
+              <ul className="space-y-4">
+                {[
+                  "All work carried out by fully licensed, insured electricians",
+                  "Modern, high-spec equipment for swift diagnostics",
+                  "Clear, upfront, written quote with zero hidden extras",
+                  "5-year guarantee on every wiring installation",
+                ].map((point) => (
+                  <li key={point} className="flex gap-3">
+                    <CheckCircle className="w-5 h-5 text-voltage shrink-0 mt-0.5" />
+                    <span className="text-sm font-semibold text-graphite">{point}</span>
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="bg-white rounded-2xl border border-warm-white p-6 space-y-4">
-              <p className="text-sm font-bold text-graphite mb-4">Emergency Warning Signs — Call Us Now</p>
-              {[
-                "Breakers tripping repeatedly or not resetting",
-                "Burning smell or scorch marks near sockets",
-                "Sparks when plugging in an appliance",
-                "Flickering lights across multiple rooms",
-                "Electric shock sensation from taps or appliances",
-              ].map((sign) => (
-                <div key={sign} className="flex items-center gap-3 text-sm text-red-700 bg-red-50 rounded-lg px-4 py-2">
-                  <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" />
-                  {sign}
-                </div>
-              ))}
-              <Link href={`tel:${siteConfig.phone}`} className="btn-primary w-full justify-center mt-4">
-                Call Now — Don&apos;t Wait
-              </Link>
+
+            {/* Emergency box */}
+            <div className="bg-red-50/50 border-2 border-red-200/60 rounded-2xl p-6">
+              <span className="inline-flex items-center gap-1 text-xs font-bold uppercase tracking-widest text-red-700 bg-red-100/70 rounded-full px-3 py-1 mb-4">
+                <Zap className="w-3 h-3" /> Danger Signs
+              </span>
+              <h3 className="font-bold text-graphite mb-3 text-lg">Electrical Warning Signs</h3>
+              <p className="text-slate-body text-sm leading-relaxed mb-5">
+                If you observe any of the following, do not attempt a DIY fix. Isolate the circuit if safe, and contact us immediately:
+              </p>
+              <div className="space-y-3 mb-6">
+                {[
+                  "Burning odor from switches or outlets",
+                  "Hot-to-touch electrical panels or sockets",
+                  "Sparks when plugging in an appliance",
+                  "Flickering lights across multiple rooms",
+                  "Electric shock sensation from taps or appliances",
+                ].map((sign) => (
+                  <div key={sign} className="flex items-center gap-3 text-sm text-red-700 bg-red-50 rounded-lg px-4 py-2">
+                    <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0" />
+                    {sign}
+                  </div>
+                ))}
+              </div>
+              <Button variant="graphite" asChild className="w-full justify-center mt-4 py-6">
+                <Link href={`tel:${siteConfig.phone}`}>
+                  Call Now — Don&apos;t Wait
+                </Link>
+              </Button>
             </div>
           </div>
         </div>

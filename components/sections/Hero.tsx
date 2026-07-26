@@ -4,6 +4,7 @@ import HeroReveal, { HERO_SIGNATURE_DELAY } from "@/components/motion/HeroReveal
 import SignatureLine from "@/components/motion/SignatureLine";
 import MagneticButton from "@/components/motion/MagneticButton";
 import { siteConfig } from "@/lib/site-config";
+import { Button } from "@/components/ui/button";
 
 interface HeroProps {
   eyebrow?: string;
@@ -48,16 +49,20 @@ export default function Hero({
               <div>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <MagneticButton>
-                    <Link href={primaryCta.href} className="btn-primary text-base px-8 py-4 shadow-lg">
-                      <Phone className="w-5 h-5" />
-                      {primaryCta.label}
-                    </Link>
+                    <Button variant="voltage" asChild className="text-base px-8 py-6 shadow-lg">
+                      <Link href={primaryCta.href}>
+                        <Phone className="w-5 h-5" />
+                        {primaryCta.label}
+                      </Link>
+                    </Button>
                   </MagneticButton>
                   <MagneticButton>
-                    <Link href={secondaryCta.href} className="btn-outline text-base px-8 py-4">
-                      {secondaryCta.label}
-                      <ArrowRight className="w-5 h-5" />
-                    </Link>
+                    <Button variant="outline" asChild className="text-base px-8 py-6 bg-white/50 backdrop-blur-sm">
+                      <Link href={secondaryCta.href}>
+                        {secondaryCta.label}
+                        <ArrowRight className="w-5 h-5" />
+                      </Link>
+                    </Button>
                   </MagneticButton>
                 </div>
                 <p className="mt-6 text-xs text-slate-body">

@@ -8,13 +8,15 @@ import { services } from "@/data/services";
 import { cn } from "@/lib/utils";
 import { useBrand } from "@/lib/useBrand";
 
+import { Button } from "@/components/ui/button";
+
 interface MobileNavProps {
   open: boolean;
   onClose: () => void;
 }
 
 export default function MobileNav({ open, onClose }: MobileNavProps) {
-  const { brand, isSecurity, config } = useBrand();
+  const { brand, isSecurity, config, btnPrimaryClass, btnOutlineClass } = useBrand();
 
   // Lock body scroll when open
   useEffect(() => {
@@ -225,27 +227,25 @@ export default function MobileNav({ open, onClose }: MobileNavProps) {
 
         {/* Footer CTAs */}
         <div className="px-6 py-6 border-t border-warm-white space-y-3">
-          <Link
-            href={`tel:${config.phone}`}
-            onClick={onClose}
-            className={cn(
-              "w-full justify-center inline-flex items-center gap-2 rounded-lg px-6 py-3 font-semibold text-base transition-all duration-200 shadow-md hover:shadow-lg active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-              isSecurity ? "bg-security-primary text-warm-white hover:bg-security-accent" : "btn-primary"
-            )}
+          <Button
+            variant={btnPrimaryClass}
+            asChild
+            className="w-full py-6 text-base"
           >
-            <Phone className="w-4 h-4" />
-            {isSecurity ? `Call Sabari: ${config.phone}` : `Call Now: ${config.phone}`}
-          </Link>
-          <Link
-            href={isSecurity ? "/security/quote" : "/quote"}
-            onClick={onClose}
-            className={cn(
-              "w-full justify-center inline-flex items-center gap-2 rounded-lg px-6 py-3 font-semibold text-base transition-all duration-200 shadow-md hover:shadow-lg active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-              isSecurity ? "bg-security-accent text-warm-white hover:bg-security-primary" : "btn-accent"
-            )}
+            <Link href={`tel:${config.phone}`} onClick={onClose}>
+              <Phone className="w-4 h-4" />
+              {isSecurity ? `Call Sabari: ${config.phone}` : `Call Now: ${config.phone}`}
+            </Link>
+          </Button>
+          <Button
+            variant={isSecurity ? "securityOutline" : "voltage"}
+            asChild
+            className="w-full py-6 text-base"
           >
-            {isSecurity ? "Book a Site Survey" : "Get a Free Quote"}
-          </Link>
+            <Link href={isSecurity ? "/security/quote" : "/quote"} onClick={onClose}>
+              {isSecurity ? "Book a Site Survey" : "Get a Free Quote"}
+            </Link>
+          </Button>
         </div>
       </div>
     </>

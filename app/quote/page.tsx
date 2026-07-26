@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Phone, FileText } from "lucide-react";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 import QuoteForm from "@/components/forms/QuoteForm";
 import { siteConfig } from "@/lib/site-config";
 
@@ -64,10 +65,12 @@ export default function QuotePage() {
                 <p className="text-voltage text-sm mb-4 leading-relaxed">
                   We are happy to discuss your project over the phone and arrange a visit directly.
                 </p>
-                <Link href={`tel:${siteConfig.phone}`} className="btn-primary w-full justify-center">
-                  <Phone className="w-4 h-4" />
-                  {siteConfig.phone}
-                </Link>
+                <Button variant="graphite" asChild className="w-full justify-center py-6 text-base shadow-md">
+                  <Link href={`tel:${siteConfig.phone}`}>
+                    <Phone className="w-4 h-4" />
+                    {siteConfig.phone}
+                  </Link>
+                </Button>
               </div>
 
               <div className="bg-white rounded-2xl border border-warm-white p-5">

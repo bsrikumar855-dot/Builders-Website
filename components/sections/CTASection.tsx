@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Phone, ArrowRight } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
+import { Button } from "@/components/ui/button";
 
 interface CTASectionProps {
   heading?: string;
@@ -10,18 +11,18 @@ interface CTASectionProps {
   primaryHref?: string;
   secondaryLabel?: string;
   secondaryHref?: string;
-  variant?: "primary" | "light";
+  variant?: "dark" | "light";
 }
 
 export default function CTASection({
-  heading = "Ready to Get Started?",
-  body = "Call us now for emergencies or fill out our quick quote form for planned work. We respond within 2 hours on business days.",
-  urgencyNote = "For electrical faults, gas leaks, or burst pipes — call immediately. Do not submit a form.",
-  primaryLabel = `Call ${siteConfig.phone}`,
+  heading = "Need a Reliable Electrician or Plumber?",
+  body = "We provide 24/7 emergency support and scheduled services with transparent, upfront pricing.",
+  urgencyNote = "Fast 60-Minute Response for Emergencies in Coimbatore City",
+  primaryLabel = `Call Now: ${siteConfig.phone}`,
   primaryHref = `tel:${siteConfig.phone}`,
   secondaryLabel = "Get a Free Quote",
   secondaryHref = "/quote",
-  variant = "primary",
+  variant = "dark",
 }: CTASectionProps) {
   if (variant === "light") {
     return (
@@ -30,14 +31,18 @@ export default function CTASection({
           <h2 id="cta-light-heading" className="text-graphite mb-4">{heading}</h2>
           <p className="text-slate-body mb-8">{body}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href={primaryHref} className="btn-primary px-8 py-4">
-              <Phone className="w-5 h-5" />
-              {primaryLabel}
-            </Link>
-            <Link href={secondaryHref} className="btn-outline px-8 py-4">
-              {secondaryLabel}
-              <ArrowRight className="w-5 h-5" />
-            </Link>
+            <Button variant="graphite" asChild className="px-8 py-6">
+              <Link href={primaryHref}>
+                <Phone className="w-5 h-5" />
+                {primaryLabel}
+              </Link>
+            </Button>
+            <Button variant="outline" asChild className="px-8 py-6">
+              <Link href={secondaryHref}>
+                {secondaryLabel}
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -59,14 +64,18 @@ export default function CTASection({
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href={primaryHref} className="btn-accent px-8 py-4 text-base">
-              <Phone className="w-5 h-5" />
-              {primaryLabel}
-            </Link>
-            <Link href={secondaryHref} className="btn-ghost-white px-8 py-4 text-base">
-              {secondaryLabel}
-              <ArrowRight className="w-5 h-5" />
-            </Link>
+            <Button variant="voltage" asChild className="px-8 py-6 text-base shadow-lg">
+              <Link href={primaryHref}>
+                <Phone className="w-5 h-5" />
+                {primaryLabel}
+              </Link>
+            </Button>
+            <Button variant="ghostWhite" asChild className="px-8 py-6 text-base">
+              <Link href={secondaryHref}>
+                {secondaryLabel}
+                <ArrowRight className="w-5 h-5" />
+              </Link>
+            </Button>
           </div>
         </div>
       </div>

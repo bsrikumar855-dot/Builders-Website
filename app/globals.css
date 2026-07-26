@@ -71,48 +71,7 @@
 }
 
 @layer components {
-  /* Brand Buttons */
-  .btn-primary {
-    @apply inline-flex items-center gap-2 rounded-lg px-6 py-3 font-semibold text-graphite text-base
-           transition-all duration-200 shadow-md hover:shadow-lg active:scale-95 focus-visible:outline-none
-           focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
-    background-color: hsl(var(--primary));
-  }
-  .btn-primary:hover {
-    background-color: hsl(var(--primary-hover));
-  }
 
-  .btn-accent {
-    @apply inline-flex items-center gap-2 rounded-lg px-6 py-3 font-semibold text-warm-white text-base
-           transition-all duration-200 shadow-md hover:shadow-lg active:scale-95 focus-visible:outline-none
-           focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
-    background-color: hsl(var(--accent));
-  }
-  .btn-accent:hover {
-    background-color: hsl(var(--accent-hover));
-  }
-
-  /* Neutral graphite outline — used on light/warm-white sections.
-     (Voltage is deliberately never used as small text/border on light
-     backgrounds: it fails contrast there. It only works as a solid fill
-     with dark text, or as foreground on dark graphite backgrounds.) */
-  .btn-outline {
-    @apply inline-flex items-center gap-2 rounded-lg border-2 px-6 py-3 font-semibold text-base
-           transition-all duration-200 hover:shadow active:scale-95 focus-visible:outline-none
-           focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
-    border-color: hsl(var(--graphite));
-    color: hsl(var(--graphite));
-  }
-  .btn-outline:hover {
-    background-color: hsl(var(--graphite));
-    color: hsl(var(--warm-white));
-  }
-
-  .btn-ghost-white {
-    @apply inline-flex items-center gap-2 rounded-lg border-2 border-white/60 px-6 py-3 
-           font-semibold text-white text-base transition-all duration-200 hover:bg-white/10
-           active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white;
-  }
 
   /* Section containers */
   .section-container {
@@ -133,16 +92,7 @@
     @apply flex items-center gap-2 text-sm font-medium;
   }
 
-  /* Form inputs */
-  .form-input {
-    @apply w-full rounded-lg border border-input bg-background px-4 py-3 text-sm
-           placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring
-           transition-colors duration-200;
-  }
 
-  .form-label {
-    @apply block text-sm font-semibold text-foreground mb-1.5;
-  }
 
   /* Service category chip */
   .category-chip {
