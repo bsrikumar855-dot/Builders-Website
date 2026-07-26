@@ -1,7 +1,5 @@
 import * as React from "react"
-import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
-
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
@@ -42,15 +40,34 @@ export interface ButtonProps
   asChild?: boolean
 }
 
+/**
+ * Button component with asChild support.
+ *
+ * Uses React.cloneElement instead of @radix-ui/react-slot to avoid the
+ * breaking changes introduced in react-slot v1.3.0. This gives us full
+ * control over prop merging without Slot's new strict child validation.
+ */
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : "button"
+  ({ className, variant, size, asChild = false, children, ...props }, ref) => {
+    const mergedClassName = cn(buttonVariants({ variant, size, className }))
+
+    if (asChild && React.isValidElement(children)) {
+      // Merge Button's styling + event props onto the child element (usually <Link>)
+      return React.cloneElement(children as React.ReactElement<any>, {
+        ...props,
+        className: cn(mergedClassName, (children as React.ReactElement<any>).props?.className),
+        ref,
+      })
+    }
+
     return (
-      <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
+      <button
+        className={mergedClassName}
         ref={ref}
         {...props}
-      />
+      >
+        {children}
+      </button>
     )
   }
 )

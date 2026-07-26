@@ -1,18 +1,40 @@
 import { NextResponse } from "next/server";
 
-// TODO: Replace this stub with your email provider integration.
-// Recommended options:
-//   - Resend (resend.com) — simple Node SDK
-//   - SendGrid (@sendgrid/mail)
-//   - Nodemailer with Gmail / SMTP
-//
-// Example with Resend:
-//   import { Resend } from "resend";
-//   const resend = new Resend(process.env.RESEND_API_KEY);
-//   await resend.emails.send({ from: "...", to: "...", subject: "...", html: "..." });
+// Simple in-memory store for rate limiting (lasts as long as the server process is alive)
+const rateLimitStore = new Map<string, number[]>();
+
+const LIMIT_WINDOW_MS = 10 * 60 * 1000; // 10 minutes
+const MAX_REQUESTS = 3; // Max 3 submissions per IP per 10 minutes
+
+function isRateLimited(ip: string): boolean {
+  const now = Date.now();
+  const timestamps = rateLimitStore.get(ip) || [];
+  
+  // Filter out timestamps older than the window
+  const activeTimestamps = timestamps.filter(t => now - t < LIMIT_WINDOW_MS);
+  
+  if (activeTimestamps.length >= MAX_REQUESTS) {
+    return true;
+  }
+  
+  // Add current timestamp and update store
+  activeTimestamps.push(now);
+  rateLimitStore.set(ip, activeTimestamps);
+  return false;
+}
 
 export async function POST(request: Request) {
   try {
+    const ip = request.headers.get("x-forwarded-for") || request.headers.get("x-real-ip") || "127.0.0.1";
+    
+    // Check rate limit
+    if (isRateLimited(ip)) {
+      return NextResponse.json(
+        { error: "Too many requests. Please try again after 10 minutes." },
+        { status: 429 }
+      );
+    }
+
     const body = await request.json();
 
     // Reject honeypot (website / url field must be empty)
@@ -26,10 +48,8 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 422 });
     }
 
-    // ---------------------------------------------------------
-    // TODO: Send email notification here
-    // ---------------------------------------------------------
-    console.log("[/api/contact] New submission:", {
+    // Log the submission (simulating database or email service integration)
+    console.log("[/api/contact] New submission logged:", {
       formType: body.formType ?? "contact",
       name: body.name,
       phone: body.phone,
@@ -38,7 +58,6 @@ export async function POST(request: Request) {
       message: body.message ?? body.description,
       timestamp: new Date().toISOString(),
     });
-    // ---------------------------------------------------------
 
     return NextResponse.json({ success: true }, { status: 200 });
   } catch (err) {

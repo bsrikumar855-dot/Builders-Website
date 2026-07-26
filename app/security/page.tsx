@@ -38,6 +38,9 @@ export default function SecurityLandingPage() {
         subheadline="High-definition camera setups, intrusion detection alarms, and access control for residences and businesses across Coimbatore district."
         primaryCta={{ label: "Book a Survey", href: "/security/quote" }}
         secondaryCta={{ label: "Explore Solutions", href: "/security/services" }}
+        bgImage="/images/security-hero-bg.webp"
+        bgAlt="Sabari Security Systems Installation"
+        bgOverlay="bg-security-primary/92"
       />
 
       {/* Trust Badges */}
@@ -140,6 +143,8 @@ export default function SecurityLandingPage() {
         primaryHref={`tel:${siteConfig.phone}`}
         secondaryLabel="Schedule Survey Online"
         secondaryHref="/security/quote"
+        bgImage="/images/security-hero-bg.webp"
+        bgOverlay="bg-security-primary/95"
       />
     </>
   );

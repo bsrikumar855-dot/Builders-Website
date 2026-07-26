@@ -99,6 +99,12 @@ export default function RootLayout({
       className={`${inter.variable} ${spaceGrotesk.variable} ${plexMono.variable}`}
     >
       <body className="min-h-screen flex flex-col">
+        <a
+          href="#main-content"
+          className="sr-only focus:not-sr-only focus:absolute focus:z-[9999] focus:top-4 focus:left-4 focus:bg-voltage focus:text-graphite focus:px-4 focus:py-2 focus:rounded-md focus:font-bold focus:shadow-md"
+        >
+          Skip to Content
+        </a>
         <LocalBusinessJsonLd />
         <Header />
         <main id="main-content" className="flex-1 pt-[96px] md:pt-[120px]">

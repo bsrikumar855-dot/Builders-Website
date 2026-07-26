@@ -7,8 +7,6 @@ import SignatureLine from "@/components/motion/SignatureLine";
 import MagneticButton from "@/components/motion/MagneticButton";
 import { siteConfig } from "@/lib/site-config";
 import { Button } from "@/components/ui/button";
-
-import { useBrand } from "@/lib/useBrand";
 import { SectionBackground } from "@/components/ui/SectionBackground";
 
 interface HeroProps {
@@ -18,6 +16,9 @@ interface HeroProps {
   subheadline: string;
   primaryCta?: { label: string; href: string };
   secondaryCta?: { label: string; href: string };
+  bgImage?: string;
+  bgOverlay?: string;
+  bgAlt?: string;
 }
 
 export default function Hero({
@@ -26,15 +27,16 @@ export default function Hero({
   subheadline,
   primaryCta = { label: "Call Now", href: `tel:${siteConfig.phone}` },
   secondaryCta = { label: "Get a Free Quote", href: "/quote" },
+  bgImage = "/images/hero-bg.webp",
+  bgOverlay = "bg-warm-white/88",
+  bgAlt = "Professional Electrical and Plumbing Panels",
 }: HeroProps) {
-  const { isSecurity } = useBrand();
-
   return (
     <section className="relative overflow-hidden" aria-label="Hero">
       <SectionBackground
-        src={isSecurity ? "/images/security-hero-bg.webp" : "/images/hero-bg.webp"}
-        alt={isSecurity ? "Sabari Security Systems Installation" : "Professional Electrical and Plumbing Panels"}
-        overlayClassName={isSecurity ? "bg-security-primary/92" : "bg-warm-white/88"}
+        src={bgImage}
+        alt={bgAlt}
+        overlayClassName={bgOverlay}
         priority
       />
       <div className="section-container relative z-10 py-20 md:py-28 lg:py-32">

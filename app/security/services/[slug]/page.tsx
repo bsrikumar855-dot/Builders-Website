@@ -187,6 +187,8 @@ export default function SecurityServicePage({ params }: Props) {
         primaryHref={`tel:${siteConfig.phone}`}
         secondaryLabel="Schedule Survey Online"
         secondaryHref="/security/quote"
+        bgImage="/images/security-hero-bg.webp"
+        bgOverlay="bg-security-primary/95"
       />
     </>
   );

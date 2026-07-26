@@ -1,10 +1,7 @@
-"use client";
-
 import Link from "next/link";
 import { Phone, ArrowRight } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
 import { Button } from "@/components/ui/button";
-import { useBrand } from "@/lib/useBrand";
 import { SectionBackground } from "@/components/ui/SectionBackground";
 
 interface CTASectionProps {
@@ -16,6 +13,8 @@ interface CTASectionProps {
   secondaryLabel?: string;
   secondaryHref?: string;
   variant?: "dark" | "light";
+  bgImage?: string;
+  bgOverlay?: string;
 }
 
 export default function CTASection({
@@ -27,8 +26,9 @@ export default function CTASection({
   secondaryLabel = "Get a Free Quote",
   secondaryHref = "/quote",
   variant = "dark",
+  bgImage = "/images/cta-bg.webp",
+  bgOverlay = "bg-graphite/92",
 }: CTASectionProps) {
-  const { isSecurity } = useBrand();
   if (variant === "light") {
     return (
       <section className="section-padding section-alt" aria-labelledby="cta-light-heading">
@@ -57,9 +57,9 @@ export default function CTASection({
   return (
     <section className="section-padding relative overflow-hidden" aria-labelledby="cta-heading">
       <SectionBackground
-        src={isSecurity ? "/images/security-hero-bg.webp" : "/images/cta-bg.webp"}
+        src={bgImage}
         alt="Service call-out background"
-        overlayClassName={isSecurity ? "bg-security-primary/95" : "bg-graphite/92"}
+        overlayClassName={bgOverlay}
       />
       <div className="section-container relative z-10">
         <div className="max-w-3xl mx-auto text-center">

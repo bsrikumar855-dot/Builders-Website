@@ -4,9 +4,11 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Phone, MessageCircle } from "lucide-react";
+import { useBrand } from "@/lib/useBrand";
 import { siteConfig } from "@/lib/site-config";
 
 export default function FloatingCTA() {
+  const { isSecurity } = useBrand();
   const [scrolledPast, setScrolledPast] = useState(false);
   const [footerVisible, setFooterVisible] = useState(false);
   const shouldReduceMotion = useReducedMotion();
@@ -41,7 +43,11 @@ export default function FloatingCTA() {
         >
           {/* WhatsApp */}
           <Link
-            href={`https://wa.me/${siteConfig.whatsapp}?text=Hi%2C%20I%20need%20help%20with%20electrical%2Fplumbing%20work.`}
+            href={`https://wa.me/${siteConfig.whatsapp}?text=${encodeURIComponent(
+              isSecurity
+                ? "Hi, I need help with security systems/CCTV work."
+                : "Hi, I need help with electrical/plumbing work."
+            )}`}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Contact via WhatsApp"
