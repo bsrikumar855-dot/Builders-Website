@@ -25,7 +25,7 @@ export default function ServiceCard({ service, variant = "default", className }:
       <Link
         href={`/services/${service.slug}`}
         className={cn(
-          "group flex items-center gap-4 p-4 rounded-xl bg-white border border-slate-100 hover:border-voltage/40 hover:shadow-md transition-all duration-200",
+          "group flex items-center gap-4 p-4 rounded-xl bg-white border border-warm-white hover:border-voltage/40 hover:shadow-md transition-all duration-200",
           className
         )}
       >
@@ -36,7 +36,7 @@ export default function ServiceCard({ service, variant = "default", className }:
           <p className="font-semibold text-graphite text-sm truncate">{service.name}</p>
           <p className="text-xs text-slate-body mt-0.5 truncate">{service.tagline}</p>
         </div>
-        <ArrowRight className="w-4 h-4 text-slate-400 group-hover:text-graphite group-hover:translate-x-1 transition-all shrink-0" />
+        <ArrowRight className="w-4 h-4 text-slate-body/50 group-hover:text-graphite group-hover:translate-x-1 transition-all shrink-0" />
       </Link>
     );
   }
@@ -47,13 +47,13 @@ export default function ServiceCard({ service, variant = "default", className }:
   return (
     <article
       className={cn(
-        "group h-full flex flex-col bg-white rounded-2xl border border-slate-100 overflow-hidden card-hover",
+        "group h-full flex flex-col bg-white rounded-2xl border border-warm-white overflow-hidden card-hover",
         variant === "featured" && "ring-1 ring-graphite/10",
         className
       )}
     >
       {/* Image */}
-      <div className="relative flex-1 min-h-[12rem] overflow-hidden bg-slate-100">
+      <div className="relative flex-1 min-h-[12rem] overflow-hidden bg-warm-white">
         <Image
           src={service.image}
           alt={`${service.name} service — Shreekumar Builders, Coimbatore`}

@@ -8,10 +8,10 @@ export default function BrandSwitcher() {
   const { brand } = useBrand();
 
   return (
-    <div className="text-xs transition-colors duration-300 py-1.5 sm:py-2 bg-slate-50/60 backdrop-blur-md border-b border-slate-200/50">
+    <div className="text-xs transition-colors duration-300 py-1.5 sm:py-2 bg-warm-white/60 backdrop-blur-md border-b border-graphite/10/50">
       <div className="section-container flex justify-between items-center">
         <div className="flex items-center gap-1.5">
-          <span className="inline-block w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+          <span className="inline-block w-1.5 h-1.5 rounded-full bg-security-accent/100 animate-pulse" />
           <span className="font-mono tracking-wider uppercase text-[9px] sm:text-[10px] text-slate-body/60">
             Coimbatore Division
           </span>
@@ -28,7 +28,7 @@ export default function BrandSwitcher() {
           >
             Shreekumar Builders
           </Link>
-          <span className="text-slate-200">|</span>
+          <span className="text-graphite/10">|</span>
           <Link
             href="/security"
             className={cn(

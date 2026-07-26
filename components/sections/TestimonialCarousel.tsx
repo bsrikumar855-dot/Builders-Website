@@ -43,7 +43,7 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
           <h2 id="testimonials-heading" className="text-graphite mb-3">
             What Our Customers Say
           </h2>
-          <p className="text-slate-500">Real feedback from real Coimbatore customers</p>
+          <p className="text-slate-body">Real feedback from real Coimbatore customers</p>
         </div>
 
         <div className="relative max-w-3xl mx-auto">
@@ -59,15 +59,15 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
             {testimonials.map((t) => (
               <article
                 key={t.id}
-                className="snap-center shrink-0 w-full bg-white/80 backdrop-blur-md border border-slate-100/80 rounded-2xl p-8 md:p-10 relative shadow-lg"
+                className="snap-center shrink-0 w-full bg-white/80 backdrop-blur-md border border-warm-white/80 rounded-2xl p-8 md:p-10 relative shadow-lg"
               >
-                <Quote className="absolute top-6 left-6 w-10 h-10 text-slate-100" aria-hidden="true" />
+                <Quote className="absolute top-6 left-6 w-10 h-10 text-warm-white" aria-hidden="true" />
 
                 <div className="flex gap-1 mb-6" aria-label={`Rating: ${t.rating} out of 5 stars`}>
                   {Array.from({ length: 5 }).map((_, i) => (
                     <Star
                       key={i}
-                      className={cn("w-5 h-5", i < t.rating ? "text-voltage fill-voltage" : "text-slate-200")}
+                      className={cn("w-5 h-5", i < t.rating ? "text-voltage fill-voltage" : "text-graphite/10")}
                       aria-hidden="true"
                     />
                   ))}
@@ -83,10 +83,10 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
                   </div>
                   <div>
                     <p className="font-bold text-graphite">{t.name}</p>
-                    <p className="text-sm text-slate-500">{t.location}</p>
+                    <p className="text-sm text-slate-body">{t.location}</p>
                   </div>
                   {t.verified && (
-                    <span className="ml-auto text-xs bg-green-50 text-green-700 border border-green-200 px-3 py-1 rounded-full font-semibold">
+                    <span className="ml-auto text-xs bg-security-accent/10 text-security-accent border border-security-accent/20 px-3 py-1 rounded-full font-semibold">
                       Verified Customer
                     </span>
                   )}
@@ -101,7 +101,7 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
               onClick={() => scrollToIndex(activeIndex - 1)}
               disabled={activeIndex === 0}
               aria-label="Previous testimonial"
-              className="w-10 h-10 rounded-full bg-white hover:bg-slate-50 disabled:opacity-30 disabled:cursor-not-allowed border border-slate-200 flex items-center justify-center text-graphite transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 shadow-sm"
+              className="w-10 h-10 rounded-full bg-white hover:bg-warm-white disabled:opacity-30 disabled:cursor-not-allowed border border-graphite/10 flex items-center justify-center text-graphite transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 shadow-sm"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
@@ -114,7 +114,7 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
                   aria-label={`Go to testimonial ${i + 1}`}
                   className={cn(
                     "rounded-full transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
-                    i === activeIndex ? "w-8 h-2.5 bg-voltage" : "w-2.5 h-2.5 bg-slate-200 hover:bg-slate-300"
+                    i === activeIndex ? "w-8 h-2.5 bg-voltage" : "w-2.5 h-2.5 bg-graphite/10 hover:bg-slate-body/50"
                   )}
                 />
               ))}
@@ -124,7 +124,7 @@ export default function TestimonialCarousel({ testimonials }: TestimonialCarouse
               onClick={() => scrollToIndex(activeIndex + 1)}
               disabled={activeIndex === testimonials.length - 1}
               aria-label="Next testimonial"
-              className="w-10 h-10 rounded-full bg-white hover:bg-slate-50 disabled:opacity-30 disabled:cursor-not-allowed border border-slate-200 flex items-center justify-center text-graphite transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 shadow-sm"
+              className="w-10 h-10 rounded-full bg-white hover:bg-warm-white disabled:opacity-30 disabled:cursor-not-allowed border border-graphite/10 flex items-center justify-center text-graphite transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 shadow-sm"
             >
               <ChevronRight className="w-5 h-5" />
             </button>

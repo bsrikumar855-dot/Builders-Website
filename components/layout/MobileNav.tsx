@@ -74,7 +74,7 @@ export default function MobileNav({ open, onClose }: MobileNavProps) {
         aria-hidden="true"
         onClick={onClose}
         className={cn(
-          "fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm transition-opacity duration-300",
+          "fixed inset-0 z-50 bg-graphite/60 backdrop-blur-sm transition-opacity duration-300",
           open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"
         )}
       />
@@ -90,7 +90,7 @@ export default function MobileNav({ open, onClose }: MobileNavProps) {
         )}
       >
         {/* Header */}
-        <div className="flex items-center justify-between px-6 py-5 border-b border-slate-100">
+        <div className="flex items-center justify-between px-6 py-5 border-b border-warm-white">
           <Link href={isSecurity ? "/security" : "/"} onClick={onClose} className="flex items-center gap-2">
             <div className={cn(
               "w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold text-sm",
@@ -98,14 +98,14 @@ export default function MobileNav({ open, onClose }: MobileNavProps) {
             )}>
               S
             </div>
-            <span className="font-bold text-slate-900">
+            <span className="font-bold text-graphite">
               {isSecurity ? "Sabari Security" : "Shreekumar Builders"}
             </span>
           </Link>
           <button
             onClick={onClose}
             aria-label="Close navigation menu"
-            className="p-2 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors"
+            className="p-2 rounded-lg text-slate-body hover:bg-warm-white transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
@@ -118,8 +118,8 @@ export default function MobileNav({ open, onClose }: MobileNavProps) {
               {/* Electrical */}
               <div>
                 <div className="flex items-center gap-2 mb-3">
-                  <Zap className="w-4 h-4 text-blue-700" />
-                  <p className="text-xs font-bold uppercase tracking-widest text-blue-700">Electrical</p>
+                  <Zap className="w-4 h-4 text-voltage" />
+                  <p className="text-xs font-bold uppercase tracking-widest text-voltage">Electrical</p>
                 </div>
                 <ul className="space-y-1">
                   {electrical.map((s) => (
@@ -127,10 +127,10 @@ export default function MobileNav({ open, onClose }: MobileNavProps) {
                       <Link
                         href={`/services/${s.slug}`}
                         onClick={onClose}
-                        className="flex items-center justify-between px-3 py-2.5 rounded-lg text-sm text-slate-700 hover:bg-blue-50 hover:text-blue-800 transition-colors"
+                        className="flex items-center justify-between px-3 py-2.5 rounded-lg text-sm text-graphite hover:bg-voltage/10 hover:text-voltage transition-colors"
                       >
                         {s.name}
-                        <ChevronRight className="w-4 h-4 text-slate-400" />
+                        <ChevronRight className="w-4 h-4 text-slate-body/50" />
                       </Link>
                     </li>
                   ))}
@@ -149,10 +149,10 @@ export default function MobileNav({ open, onClose }: MobileNavProps) {
                       <Link
                         href={`/services/${s.slug}`}
                         onClick={onClose}
-                        className="flex items-center justify-between px-3 py-2.5 rounded-lg text-sm text-slate-700 hover:bg-cyan-50 hover:text-cyan-800 transition-colors"
+                        className="flex items-center justify-between px-3 py-2.5 rounded-lg text-sm text-graphite hover:bg-copper/10 hover:text-copper transition-colors"
                       >
                         {s.name}
-                        <ChevronRight className="w-4 h-4 text-slate-400" />
+                        <ChevronRight className="w-4 h-4 text-slate-body/50" />
                       </Link>
                     </li>
                   ))}
@@ -173,10 +173,10 @@ export default function MobileNav({ open, onClose }: MobileNavProps) {
                       <Link
                         href={`/security/services/${s.slug}`}
                         onClick={onClose}
-                        className="flex items-center justify-between px-3 py-2.5 rounded-lg text-sm text-slate-700 hover:bg-green-50 hover:text-security-primary transition-colors"
+                        className="flex items-center justify-between px-3 py-2.5 rounded-lg text-sm text-graphite hover:bg-security-accent/10 hover:text-security-primary transition-colors"
                       >
                         {s.name}
-                        <ChevronRight className="w-4 h-4 text-slate-400" />
+                        <ChevronRight className="w-4 h-4 text-slate-body/50" />
                       </Link>
                     </li>
                   ))}
@@ -195,10 +195,10 @@ export default function MobileNav({ open, onClose }: MobileNavProps) {
                       <Link
                         href={`/security/services/${s.slug}`}
                         onClick={onClose}
-                        className="flex items-center justify-between px-3 py-2.5 rounded-lg text-sm text-slate-700 hover:bg-green-50 hover:text-security-primary transition-colors"
+                        className="flex items-center justify-between px-3 py-2.5 rounded-lg text-sm text-graphite hover:bg-security-accent/10 hover:text-security-primary transition-colors"
                       >
                         {s.name}
-                        <ChevronRight className="w-4 h-4 text-slate-400" />
+                        <ChevronRight className="w-4 h-4 text-slate-body/50" />
                       </Link>
                     </li>
                   ))}
@@ -208,23 +208,23 @@ export default function MobileNav({ open, onClose }: MobileNavProps) {
           )}
 
           {/* Other links */}
-          <div className="border-t border-slate-100 pt-4 space-y-1">
+          <div className="border-t border-warm-white pt-4 space-y-1">
             {otherLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
                 onClick={onClose}
-                className="flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-semibold text-slate-700 hover:bg-slate-50 transition-colors"
+                className="flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-semibold text-graphite hover:bg-warm-white transition-colors"
               >
                 {link.label}
-                <ChevronRight className="w-4 h-4 text-slate-400" />
+                <ChevronRight className="w-4 h-4 text-slate-body/50" />
               </Link>
             ))}
           </div>
         </nav>
 
         {/* Footer CTAs */}
-        <div className="px-6 py-6 border-t border-slate-100 space-y-3">
+        <div className="px-6 py-6 border-t border-warm-white space-y-3">
           <Link
             href={`tel:${config.phone}`}
             onClick={onClose}

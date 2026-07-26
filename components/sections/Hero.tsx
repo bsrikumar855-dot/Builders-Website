@@ -29,7 +29,7 @@ export default function Hero({
           <HeroReveal
             eyebrow={
               eyebrow && (
-                <p className="inline-block bg-voltage/15 text-voltage border border-voltage/30 text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
+                <p className="inline-block bg-voltage text-graphite text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full mb-6">
                   {eyebrow}
                 </p>
               )
@@ -60,7 +60,7 @@ export default function Hero({
                     </Link>
                   </MagneticButton>
                 </div>
-                <p className="mt-6 text-xs text-slate-500">
+                <p className="mt-6 text-xs text-slate-body">
                   No call-out fee for estimates · Licence {siteConfig.licence}
                 </p>
               </div>

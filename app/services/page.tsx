@@ -25,7 +25,7 @@ export default function ServicesPage() {
         <div className="section-container text-center">
           <p className="text-voltage text-xs font-bold uppercase tracking-widest mb-3">What We Offer</p>
           <h1 id="services-page-heading" className="text-graphite mb-4">Our Services</h1>
-          <p className="text-slate-600 max-w-2xl mx-auto text-lg">
+          <p className="text-slate-body max-w-2xl mx-auto text-lg">
             Licensed electrical and plumbing services for residential and commercial properties in Coimbatore.
             All work comes with a 5-year workmanship warranty and free written estimates.
           </p>

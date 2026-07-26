@@ -48,10 +48,10 @@ export default function HomePage() {
         <div className="section-container">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-10 gap-4">
             <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-blue-700 mb-2">What We Do</p>
-              <h2 id="services-heading" className="text-slate-900">Our Core Services</h2>
+              <p className="text-xs font-bold uppercase tracking-widest text-graphite mb-2">What We Do</p>
+              <h2 id="services-heading" className="text-graphite">Our Core Services</h2>
             </div>
-            <Link href="/services" className="inline-flex items-center gap-2 text-sm font-semibold text-blue-800 hover:text-blue-900 shrink-0">
+            <Link href="/services" className="inline-flex items-center gap-2 text-sm font-semibold text-graphite hover:text-graphite shrink-0">
               View All Services <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -64,11 +64,11 @@ export default function HomePage() {
         <div className="section-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-blue-700 mb-3">Why Shreekumar Builders</p>
-              <h2 id="why-heading" className="text-slate-900 mb-6">
+              <p className="text-xs font-bold uppercase tracking-widest text-graphite mb-3">Why Shreekumar Builders</p>
+              <h2 id="why-heading" className="text-graphite mb-6">
                 Experience You Can Trust,<br />Results That Last
               </h2>
-              <p className="text-slate-500 leading-relaxed mb-8">
+              <p className="text-slate-body leading-relaxed mb-8">
                 With over {new Date().getFullYear() - siteConfig.established} years serving Coimbatore, we understand local wiring standards, water pressure conditions, and building types — from 1970s bungalows to modern high-rises. Every job comes with a written quote, ISI-marked materials, and a 5-year workmanship warranty.
               </p>
               <ul className="space-y-3">
@@ -79,8 +79,8 @@ export default function HomePage() {
                   "Post-work insulation resistance and earth tests on every job",
                   "Clean site policy: dust sheets down, cleaned up daily",
                 ].map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-slate-700">
-                    <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
+                  <li key={item} className="flex items-start gap-3 text-sm text-graphite">
+                    <CheckCircle className="w-5 h-5 text-security-accent shrink-0 mt-0.5" />
                     {item}
                   </li>
                 ))}
@@ -99,9 +99,9 @@ export default function HomePage() {
             <div className="grid grid-cols-2 gap-5">
               {[
                 { value: `${new Date().getFullYear() - siteConfig.established}+`, label: "Years in Business", color: "gradient-brand text-white" },
-                { value: "500+", label: "Projects Completed", color: "bg-amber-400 text-slate-900" },
-                { value: "100%", label: "Licensed & Insured", color: "bg-slate-900 text-white" },
-                { value: "5 Year", label: "Workmanship Warranty", color: "bg-green-600 text-white" },
+                { value: "500+", label: "Projects Completed", color: "bg-voltage text-graphite" },
+                { value: "100%", label: "Licensed & Insured", color: "bg-graphite text-white" },
+                { value: "5 Year", label: "Workmanship Warranty", color: "bg-copper text-white" },
               ].map((stat) => (
                 <div
                   key={stat.label}
@@ -123,10 +123,10 @@ export default function HomePage() {
         <div className="section-container">
           <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-10 gap-4">
             <div>
-              <p className="text-xs font-bold uppercase tracking-widest text-blue-700 mb-2">Recent Work</p>
-              <h2 id="projects-heading" className="text-slate-900">Featured Projects</h2>
+              <p className="text-xs font-bold uppercase tracking-widest text-graphite mb-2">Recent Work</p>
+              <h2 id="projects-heading" className="text-graphite">Featured Projects</h2>
             </div>
-            <Link href="/projects" className="inline-flex items-center gap-2 text-sm font-semibold text-blue-800 hover:text-blue-900">
+            <Link href="/projects" className="inline-flex items-center gap-2 text-sm font-semibold text-graphite hover:text-graphite">
               View All Projects <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -144,9 +144,9 @@ export default function HomePage() {
       <section className="section-padding" aria-labelledby="areas-heading">
         <div className="section-container">
           <div className="text-center mb-10">
-            <p className="text-xs font-bold uppercase tracking-widest text-blue-700 mb-2">Service Coverage</p>
-            <h2 id="areas-heading" className="text-slate-900 mb-3">Areas We Serve</h2>
-            <p className="text-slate-500 max-w-xl mx-auto">
+            <p className="text-xs font-bold uppercase tracking-widest text-graphite mb-2">Service Coverage</p>
+            <h2 id="areas-heading" className="text-graphite mb-3">Areas We Serve</h2>
+            <p className="text-slate-body max-w-xl mx-auto">
               Based in Coimbatore, we cover the entire city and surrounding suburbs. Same-day response available across all service areas.
             </p>
           </div>
@@ -155,22 +155,22 @@ export default function HomePage() {
               <Link
                 key={area.slug}
                 href={`/areas/${area.slug}`}
-                className="group bg-white border border-slate-100 rounded-xl p-5 hover:border-blue-200 hover:shadow-md transition-all duration-200"
+                className="group bg-white border border-warm-white rounded-xl p-5 hover:border-graphite/20 hover:shadow-md transition-all duration-200"
               >
                 <div className="flex items-center gap-3 mb-2">
-                  <MapPin className="w-5 h-5 text-blue-700 shrink-0" />
-                  <h3 className="font-bold text-slate-900 group-hover:text-blue-800 transition-colors">{area.name}</h3>
+                  <MapPin className="w-5 h-5 text-graphite shrink-0" />
+                  <h3 className="font-bold text-graphite group-hover:text-graphite transition-colors">{area.name}</h3>
                 </div>
-                <p className="text-xs text-slate-500">{area.district}, Tamilnadu</p>
-                <p className="text-xs font-semibold text-blue-700 mt-3 group-hover:underline">
+                <p className="text-xs text-slate-body">{area.district}, Tamilnadu</p>
+                <p className="text-xs font-semibold text-graphite mt-3 group-hover:underline">
                   View services in {area.name} →
                 </p>
               </Link>
             ))}
           </div>
-          <p className="text-center text-sm text-slate-500">
+          <p className="text-center text-sm text-slate-body">
             Don&apos;t see your area?{" "}
-            <Link href="/contact" className="text-blue-800 font-semibold hover:underline">
+            <Link href="/contact" className="text-graphite font-semibold hover:underline">
               Contact us
             </Link>{" "}
             — we cover all of Coimbatore district.

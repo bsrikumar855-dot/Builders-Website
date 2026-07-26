@@ -45,7 +45,7 @@ export default function FloatingCTA() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Contact via WhatsApp"
-            className="w-14 h-14 rounded-full bg-green-500 hover:bg-green-600 text-warm-white shadow-xl flex items-center justify-center transition-colors active:scale-95"
+            className="w-14 h-14 rounded-full bg-security-accent hover:bg-security-accent/80 text-warm-white shadow-xl flex items-center justify-center transition-colors active:scale-95"
           >
             <MessageCircle className="w-6 h-6" />
           </Link>

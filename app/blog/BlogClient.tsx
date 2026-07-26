@@ -31,8 +31,8 @@ export default function BlogClient() {
             aria-pressed={activeFilter === f.value}
             className={`px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 ${
               activeFilter === f.value
-                ? "bg-slate-900 text-white shadow-md"
-                : "bg-white border border-slate-200 text-slate-600 hover:border-blue-300 hover:text-blue-800"
+                ? "bg-graphite text-white shadow-md"
+                : "bg-white border border-graphite/10 text-slate-body hover:border-graphite/40 hover:text-graphite"
             }`}
           >
             {f.label}
@@ -45,7 +45,7 @@ export default function BlogClient() {
 
       {/* Grid */}
       {filtered.length === 0 ? (
-        <p className="text-center text-slate-500 py-16">No articles found in this category yet.</p>
+        <p className="text-center text-slate-body py-16">No articles found in this category yet.</p>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filtered.map((post) => (

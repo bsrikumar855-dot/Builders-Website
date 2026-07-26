@@ -47,7 +47,7 @@ export default function FAQAccordion({ faqs, heading = "Frequently Asked Questio
 
         <div className="space-y-3">
           {faqs.map((faq, i) => (
-            <div key={i} className="bg-white border border-slate-200 rounded-xl overflow-hidden">
+            <div key={i} className="bg-white border border-graphite/10 rounded-xl overflow-hidden">
               <button
                 id={`faq-btn-${i}`}
                 aria-expanded={open === i}
@@ -58,7 +58,7 @@ export default function FAQAccordion({ faqs, heading = "Frequently Asked Questio
                 <span>{faq.question}</span>
                 <ChevronDown
                   className={cn(
-                    "w-5 h-5 text-slate-400 shrink-0 transition-transform duration-200",
+                    "w-5 h-5 text-slate-body/50 shrink-0 transition-transform duration-200",
                     open === i && "rotate-180 text-copper"
                   )}
                   aria-hidden="true"
@@ -77,7 +77,7 @@ export default function FAQAccordion({ faqs, heading = "Frequently Asked Questio
                     transition={{ duration: shouldReduceMotion ? 0.01 : 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
                     style={{ overflow: "hidden" }}
                   >
-                    <div className="px-6 pb-5 text-slate-body leading-relaxed border-t border-slate-100 pt-4">
+                    <div className="px-6 pb-5 text-slate-body leading-relaxed border-t border-warm-white pt-4">
                       {faq.answer}
                     </div>
                   </motion.div>

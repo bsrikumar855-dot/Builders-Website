@@ -25,7 +25,7 @@ const categoryLabels: Record<string, string> = {
 const categoryStyles: Record<string, string> = {
   electrical: "category-chip-electrical",
   plumbing: "category-chip-plumbing",
-  maintenance: "category-chip bg-green-100 text-green-800",
+  maintenance: "category-chip bg-security-accent/10 text-security-primary",
 };
 
 export async function generateStaticParams() {
@@ -83,14 +83,14 @@ export default function BlogPostPage({ params }: Props) {
       />
 
       {/* Breadcrumb */}
-      <nav aria-label="Breadcrumb" className="border-b border-slate-100 bg-white">
+      <nav aria-label="Breadcrumb" className="border-b border-warm-white bg-white">
         <div className="section-container py-4">
-          <ol className="flex items-center gap-2 text-sm text-slate-500">
-            <li><Link href="/" className="hover:text-blue-800 transition-colors">Home</Link></li>
+          <ol className="flex items-center gap-2 text-sm text-slate-body">
+            <li><Link href="/" className="hover:text-graphite transition-colors">Home</Link></li>
             <li><ChevronRight className="w-4 h-4" /></li>
-            <li><Link href="/blog" className="hover:text-blue-800 transition-colors">Blog</Link></li>
+            <li><Link href="/blog" className="hover:text-graphite transition-colors">Blog</Link></li>
             <li><ChevronRight className="w-4 h-4" /></li>
-            <li className="text-slate-900 font-medium truncate max-w-[200px] sm:max-w-none">{post.title}</li>
+            <li className="text-graphite font-medium truncate max-w-[200px] sm:max-w-none">{post.title}</li>
           </ol>
         </div>
       </nav>
@@ -99,9 +99,9 @@ export default function BlogPostPage({ params }: Props) {
       <section className="section-padding pb-10" aria-labelledby="post-heading">
         <div className="section-container max-w-3xl">
           <span className={categoryStyles[post.category]}>{categoryLabels[post.category]}</span>
-          <h1 id="post-heading" className="text-slate-900 mt-4 mb-5">{post.title}</h1>
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-500 mb-8">
-            <span className="font-semibold text-slate-700">{post.author}</span>
+          <h1 id="post-heading" className="text-graphite mt-4 mb-5">{post.title}</h1>
+          <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-sm text-slate-body mb-8">
+            <span className="font-semibold text-graphite">{post.author}</span>
             <span className="flex items-center gap-1.5">
               <Calendar className="w-4 h-4" />
               {publishedLabel}
@@ -111,7 +111,7 @@ export default function BlogPostPage({ params }: Props) {
               {post.readTime} min read
             </span>
           </div>
-          <div className="relative rounded-2xl overflow-hidden h-64 md:h-96 bg-slate-100">
+          <div className="relative rounded-2xl overflow-hidden h-64 md:h-96 bg-warm-white">
             <Image
               src={post.coverImage}
               alt={`${post.title} — Shreekumar Builders`}
@@ -132,10 +132,10 @@ export default function BlogPostPage({ params }: Props) {
 
         {/* Mid-article callout */}
         <div className="section-container max-w-3xl py-6">
-          <div className="bg-amber-50 border border-amber-200 rounded-2xl p-6 md:p-8 flex flex-col sm:flex-row items-start sm:items-center gap-5 justify-between">
+          <div className="bg-voltage/10 border border-voltage/20 rounded-2xl p-6 md:p-8 flex flex-col sm:flex-row items-start sm:items-center gap-5 justify-between">
             <div>
-              <p className="font-bold text-amber-900 mb-1">Facing this issue right now?</p>
-              <p className="text-sm text-amber-800">Get a free estimate — no call-out fee, no obligation.</p>
+              <p className="font-bold text-graphite mb-1">Facing this issue right now?</p>
+              <p className="text-sm text-graphite">Get a free estimate — no call-out fee, no obligation.</p>
             </div>
             <Link href="/quote" className="btn-accent shrink-0 whitespace-nowrap">
               Get a Free Estimate <ArrowRight className="w-4 h-4" />
@@ -152,7 +152,7 @@ export default function BlogPostPage({ params }: Props) {
       {relatedServices.length > 0 && (
         <section className="section-padding section-alt" aria-labelledby="related-service-heading">
           <div className="section-container max-w-3xl">
-            <h2 id="related-service-heading" className="text-slate-900 mb-6">Related Service</h2>
+            <h2 id="related-service-heading" className="text-graphite mb-6">Related Service</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
               {relatedServices.slice(0, 2).map((s) => (
                 <ServiceCard key={s.slug} service={s} />
@@ -166,7 +166,7 @@ export default function BlogPostPage({ params }: Props) {
       {relatedPosts.length > 0 && (
         <section className="section-padding" aria-labelledby="related-posts-heading">
           <div className="section-container">
-            <h2 id="related-posts-heading" className="text-slate-900 text-center mb-10">More {categoryLabels[post.category]} Articles</h2>
+            <h2 id="related-posts-heading" className="text-graphite text-center mb-10">More {categoryLabels[post.category]} Articles</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {relatedPosts.map((p) => (
                 <BlogCard key={p.slug} post={p} />

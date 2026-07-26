@@ -62,7 +62,7 @@ export default function AboutPage() {
           <h1 id="about-heading" className="text-graphite mb-4">
             Coimbatore&apos;s Trusted Electrical & Plumbing Contractors Since 2008
           </h1>
-          <p className="text-slate-600 text-lg leading-relaxed">
+          <p className="text-slate-body text-lg leading-relaxed">
             We are a family-run business built on honest advice, quality workmanship, and long-term relationships with our customers. Every job — from fitting a socket to wiring a factory — gets the same standard of care.
           </p>
         </div>
@@ -73,8 +73,8 @@ export default function AboutPage() {
         <div className="section-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div>
-              <h2 id="story-heading" className="text-slate-900 mb-6">Our Story</h2>
-              <div className="space-y-4 text-slate-500 leading-relaxed">
+              <h2 id="story-heading" className="text-graphite mb-6">Our Story</h2>
+              <div className="space-y-4 text-slate-body leading-relaxed">
                 <p>
                   Shreekumar Builders was founded in 2008 by K. Shreekumar, a qualified electrical engineer who saw that Coimbatore&apos;s homeowners and business owners were being let down by unlicensed contractors cutting corners on safety-critical work.
                 </p>
@@ -88,21 +88,21 @@ export default function AboutPage() {
             </div>
 
             {/* Certifications */}
-            <div className="bg-white rounded-2xl border border-slate-100 p-7">
-              <h3 className="text-lg font-bold text-slate-900 mb-5 flex items-center gap-2">
-                <Award className="w-5 h-5 text-amber-500" />
+            <div className="bg-white rounded-2xl border border-warm-white p-7">
+              <h3 className="text-lg font-bold text-graphite mb-5 flex items-center gap-2">
+                <Award className="w-5 h-5 text-voltage" />
                 Licences & Certifications
               </h3>
               <ul className="space-y-3">
                 {certifications.map((cert) => (
-                  <li key={cert} className="flex items-start gap-3 text-sm text-slate-700">
-                    <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
+                  <li key={cert} className="flex items-start gap-3 text-sm text-graphite">
+                    <CheckCircle className="w-5 h-5 text-security-accent shrink-0 mt-0.5" />
                     {cert}
                   </li>
                 ))}
               </ul>
-              <div className="mt-6 pt-5 border-t border-slate-100">
-                <p className="text-xs text-slate-500">Licence number visible on every quote and invoice. Customers can verify with the Tamil Nadu Electrical Licensing Board.</p>
+              <div className="mt-6 pt-5 border-t border-warm-white">
+                <p className="text-xs text-slate-body">Licence number visible on every quote and invoice. Customers can verify with the Tamil Nadu Electrical Licensing Board.</p>
               </div>
             </div>
           </div>
@@ -112,13 +112,13 @@ export default function AboutPage() {
       {/* Timeline */}
       <section className="section-padding" aria-labelledby="timeline-heading">
         <div className="section-container max-w-3xl">
-          <h2 id="timeline-heading" className="text-slate-900 text-center mb-10">Our Journey</h2>
-          <div className="relative pl-6 border-l-2 border-blue-100 space-y-8">
+          <h2 id="timeline-heading" className="text-graphite text-center mb-10">Our Journey</h2>
+          <div className="relative pl-6 border-l-2 border-graphite/10 space-y-8">
             {milestones.map((m) => (
               <div key={m.year} className="relative">
                 <div className="absolute -left-[1.75rem] w-5 h-5 rounded-full gradient-brand border-2 border-white" />
-                <p className="text-xs font-bold text-blue-700 mb-1">{m.year}</p>
-                <p className="text-slate-700 font-medium">{m.event}</p>
+                <p className="text-xs font-bold text-graphite mb-1">{m.year}</p>
+                <p className="text-graphite font-medium">{m.event}</p>
               </div>
             ))}
           </div>
@@ -129,24 +129,24 @@ export default function AboutPage() {
       <section className="section-padding section-alt" aria-labelledby="team-heading">
         <div className="section-container">
           <div className="text-center mb-10">
-            <h2 id="team-heading" className="text-slate-900 mb-3">Meet the Team</h2>
-            <p className="text-slate-500 max-w-xl mx-auto">
+            <h2 id="team-heading" className="text-graphite mb-3">Meet the Team</h2>
+            <p className="text-slate-body max-w-xl mx-auto">
               Licensed professionals with decades of combined experience in Coimbatore.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {team.map((member) => (
-              <div key={member.name} className="bg-white rounded-2xl border border-slate-100 p-6 text-center">
+              <div key={member.name} className="bg-white rounded-2xl border border-warm-white p-6 text-center">
                 <div className="w-16 h-16 rounded-full gradient-brand flex items-center justify-center text-white text-2xl font-black mx-auto mb-4">
                   {member.name[0]}
                 </div>
-                <h3 className="font-bold text-slate-900 text-lg">{member.name}</h3>
-                <p className="text-blue-700 text-sm font-semibold mb-1">{member.role}</p>
-                <div className="flex items-center justify-center gap-4 text-xs text-slate-500 mb-4">
-                  <span className="flex items-center gap-1"><Star className="w-3 h-3 text-amber-400 fill-amber-400" />{member.experience}</span>
+                <h3 className="font-bold text-graphite text-lg">{member.name}</h3>
+                <p className="text-graphite text-sm font-semibold mb-1">{member.role}</p>
+                <div className="flex items-center justify-center gap-4 text-xs text-slate-body mb-4">
+                  <span className="flex items-center gap-1"><Star className="w-3 h-3 text-voltage fill-amber-400" />{member.experience}</span>
                   <span>Lic: {member.licence}</span>
                 </div>
-                <p className="text-sm text-slate-500 leading-relaxed">{member.bio}</p>
+                <p className="text-sm text-slate-body leading-relaxed">{member.bio}</p>
               </div>
             ))}
           </div>

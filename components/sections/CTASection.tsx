@@ -27,8 +27,8 @@ export default function CTASection({
     return (
       <section className="section-padding section-alt" aria-labelledby="cta-light-heading">
         <div className="section-container text-center max-w-2xl">
-          <h2 id="cta-light-heading" className="text-slate-900 mb-4">{heading}</h2>
-          <p className="text-slate-500 mb-8">{body}</p>
+          <h2 id="cta-light-heading" className="text-graphite mb-4">{heading}</h2>
+          <p className="text-slate-body mb-8">{body}</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href={primaryHref} className="btn-primary px-8 py-4">
               <Phone className="w-5 h-5" />
@@ -51,7 +51,7 @@ export default function CTASection({
           <h2 id="cta-heading" className="text-white mb-4">
             {heading}
           </h2>
-          <p className="text-blue-100 text-lg mb-8 leading-relaxed">{body}</p>
+          <p className="text-warm-white/70 text-lg mb-8 leading-relaxed">{body}</p>
 
           {/* Urgency note */}
           <div className="bg-red-500/20 border border-red-400/40 text-red-200 rounded-xl px-5 py-3 text-sm font-semibold mb-8 inline-block">

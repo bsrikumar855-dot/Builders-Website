@@ -67,9 +67,9 @@ export default function ContactForm() {
   if (status === "success") {
     return (
       <div className="flex flex-col items-center justify-center py-12 text-center gap-4">
-        <CheckCircle className="w-16 h-16 text-green-500" />
-        <h3 className="text-xl font-bold text-slate-900">Message Received!</h3>
-        <p className="text-slate-500 max-w-sm">
+        <CheckCircle className="w-16 h-16 text-security-accent" />
+        <h3 className="text-xl font-bold text-graphite">Message Received!</h3>
+        <p className="text-slate-body max-w-sm">
           We will call you back within 2 business hours. For urgent matters, please call us directly.
         </p>
         <button
@@ -140,7 +140,7 @@ export default function ContactForm() {
       {/* Email */}
       <div>
         <label htmlFor="email" className="form-label">
-          Email Address <span className="text-slate-400 font-normal">(optional)</span>
+          Email Address <span className="text-slate-body/50 font-normal">(optional)</span>
         </label>
         <input
           id="email"
@@ -219,7 +219,7 @@ export default function ContactForm() {
         )}
       </button>
 
-      <p className="text-xs text-slate-400 text-center">
+      <p className="text-xs text-slate-body/50 text-center">
         We typically respond within 2 business hours. For emergencies, please call us.
       </p>
     </form>

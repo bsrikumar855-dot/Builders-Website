@@ -38,7 +38,7 @@ export default function ElectricalPage() {
           <h1 id="elec-heading" className="text-graphite mb-4 max-w-3xl">
             Licensed Electrical Services in Coimbatore
           </h1>
-          <p className="text-slate-600 text-lg max-w-2xl leading-relaxed mb-8">
+          <p className="text-slate-body text-lg max-w-2xl leading-relaxed mb-8">
             From simple socket additions to full house rewires, our certified electricians complete every job to IS standards — with a 5-year warranty on all workmanship.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
@@ -57,23 +57,23 @@ export default function ElectricalPage() {
         <div className="section-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 id="elec-why-heading" className="text-slate-900 mb-6">
+              <h2 id="elec-why-heading" className="text-graphite mb-6">
                 Why Choose a Licensed Electrician?
               </h2>
-              <p className="text-slate-500 mb-6 leading-relaxed">
+              <p className="text-slate-body mb-6 leading-relaxed">
                 Electrical work done by unlicensed contractors is a leading cause of domestic fires in India. Our work is performed by certified electricians, uses ISI-marked materials, and is tested before hand-over — protecting your family, your property, and your insurance policy.
               </p>
               <ul className="space-y-3">
                 {electricalHighlights.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-slate-700">
-                    <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
+                  <li key={item} className="flex items-start gap-3 text-sm text-graphite">
+                    <CheckCircle className="w-5 h-5 text-security-accent shrink-0 mt-0.5" />
                     {item}
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="bg-white rounded-2xl border border-slate-100 p-6 space-y-4">
-              <p className="text-sm font-bold text-slate-900 mb-4">Emergency Warning Signs — Call Us Now</p>
+            <div className="bg-white rounded-2xl border border-warm-white p-6 space-y-4">
+              <p className="text-sm font-bold text-graphite mb-4">Emergency Warning Signs — Call Us Now</p>
               {[
                 "Breakers tripping repeatedly or not resetting",
                 "Burning smell or scorch marks near sockets",
@@ -97,7 +97,7 @@ export default function ElectricalPage() {
       {/* Service grid */}
       <section className="section-padding" aria-labelledby="elec-services-heading">
         <div className="section-container">
-          <h2 id="elec-services-heading" className="text-slate-900 text-center mb-10">
+          <h2 id="elec-services-heading" className="text-graphite text-center mb-10">
             All Electrical Services
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

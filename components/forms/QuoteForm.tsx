@@ -90,9 +90,9 @@ export default function QuoteForm() {
   if (status === "success") {
     return (
       <div className="flex flex-col items-center justify-center py-16 text-center gap-4">
-        <CheckCircle className="w-16 h-16 text-green-500" />
-        <h3 className="text-2xl font-bold text-slate-900">Quote Request Received!</h3>
-        <p className="text-slate-500 max-w-md">
+        <CheckCircle className="w-16 h-16 text-security-accent" />
+        <h3 className="text-2xl font-bold text-graphite">Quote Request Received!</h3>
+        <p className="text-slate-body max-w-md">
           Thank you! We will review your details and call you within 2 business hours to discuss and schedule a free site visit.
         </p>
         <button onClick={() => setStatus("idle")} className="btn-outline mt-2">
@@ -117,7 +117,7 @@ export default function QuoteForm() {
 
       {/* Section: Contact Details */}
       <div>
-        <h3 className="flex items-center gap-2 text-base font-bold text-slate-900 mb-4">
+        <h3 className="flex items-center gap-2 text-base font-bold text-graphite mb-4">
           <span className="w-7 h-7 rounded-full gradient-brand text-white flex items-center justify-center text-xs font-black">1</span>
           Your Contact Details
         </h3>
@@ -135,7 +135,7 @@ export default function QuoteForm() {
             {errors.phone && <p className="mt-1 text-xs text-red-500">{errors.phone.message}</p>}
           </div>
           <div>
-            <label htmlFor="q-email" className="form-label">Email <span className="text-slate-400 font-normal">(optional)</span></label>
+            <label htmlFor="q-email" className="form-label">Email <span className="text-slate-body/50 font-normal">(optional)</span></label>
             <input id="q-email" type="email" autoComplete="email" placeholder="you@example.com"
               className="form-input" {...register("email")} />
           </div>
@@ -150,7 +150,7 @@ export default function QuoteForm() {
 
       {/* Section: Project Details */}
       <div>
-        <h3 className="flex items-center gap-2 text-base font-bold text-slate-900 mb-4">
+        <h3 className="flex items-center gap-2 text-base font-bold text-graphite mb-4">
           <span className="w-7 h-7 rounded-full gradient-brand text-white flex items-center justify-center text-xs font-black">2</span>
           Project Details
         </h3>
@@ -189,7 +189,7 @@ export default function QuoteForm() {
             {errors.timeline && <p className="mt-1 text-xs text-red-500">{errors.timeline.message}</p>}
           </div>
           <div>
-            <label htmlFor="q-budget" className="form-label">Approximate Budget <span className="text-slate-400 font-normal">(optional)</span></label>
+            <label htmlFor="q-budget" className="form-label">Approximate Budget <span className="text-slate-body/50 font-normal">(optional)</span></label>
             <select id="q-budget" className="form-input" defaultValue="" {...register("budget")}>
               <option value="" disabled>Select range…</option>
               {budgetOptions.map((opt) => (
@@ -224,7 +224,7 @@ export default function QuoteForm() {
         )}
       </button>
 
-      <p className="text-xs text-slate-400 text-center">
+      <p className="text-xs text-slate-body/50 text-center">
         All estimates are free and carry no obligation. We will call you to arrange a convenient site visit.
       </p>
     </form>

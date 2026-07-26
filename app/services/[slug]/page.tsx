@@ -67,7 +67,7 @@ export default function ServicePage({ params }: Props) {
               </span>
             </div>
             <h1 id="svc-heading" className="text-graphite mb-4">{service.name}</h1>
-            <p className="text-slate-600 text-lg leading-relaxed mb-8 max-w-2xl">{service.tagline}</p>
+            <p className="text-slate-body text-lg leading-relaxed mb-8 max-w-2xl">{service.tagline}</p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href={`tel:${siteConfig.phone}`} className="btn-accent px-8 py-4 text-base">
                 <Phone className="w-5 h-5" />
@@ -84,24 +84,24 @@ export default function ServicePage({ params }: Props) {
       {/* Problem Statement */}
       <section className="section-padding section-alt" aria-labelledby="problem-heading">
         <div className="section-container max-w-4xl">
-          <div className="bg-amber-50 border border-amber-200 rounded-2xl p-6 md:p-8 mb-10">
-            <h2 id="problem-heading" className="text-xl font-bold text-amber-900 mb-3">
+          <div className="bg-voltage/10 border border-voltage/20 rounded-2xl p-6 md:p-8 mb-10">
+            <h2 id="problem-heading" className="text-xl font-bold text-graphite mb-3">
               Why This Matters
             </h2>
-            <p className="text-amber-800 leading-relaxed">{service.problem}</p>
+            <p className="text-slate-body leading-relaxed">{service.problem}</p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
             <div>
-              <h2 className="text-slate-900 mb-6">About {service.name}</h2>
-              <p className="text-slate-500 leading-relaxed mb-8">{service.description}</p>
+              <h2 className="text-graphite mb-6">About {service.name}</h2>
+              <p className="text-slate-body leading-relaxed mb-8">{service.description}</p>
 
               {/* What's included */}
-              <h3 className="text-lg font-bold text-slate-900 mb-4">What&apos;s Included</h3>
+              <h3 className="text-lg font-bold text-graphite mb-4">What&apos;s Included</h3>
               <ul className="space-y-3">
                 {service.includes.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-slate-700">
-                    <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
+                  <li key={item} className="flex items-start gap-3 text-sm text-graphite">
+                    <CheckCircle className="w-5 h-5 text-security-accent shrink-0 mt-0.5" />
                     {item}
                   </li>
                 ))}
@@ -109,7 +109,7 @@ export default function ServicePage({ params }: Props) {
             </div>
 
             {/* Service image */}
-            <div className="relative rounded-2xl overflow-hidden h-80 bg-slate-100">
+            <div className="relative rounded-2xl overflow-hidden h-80 bg-warm-white">
               <Image
                 src={service.image}
                 alt={`${service.name} — Shreekumar Builders, Coimbatore`}
@@ -126,13 +126,13 @@ export default function ServicePage({ params }: Props) {
       <ProcessSteps steps={service.process} heading={`How We Handle ${service.name}`} />
 
       {/* Pricing note */}
-      <section className="py-10 bg-white border-y border-slate-100" aria-label="Pricing information">
+      <section className="py-10 bg-white border-y border-warm-white" aria-label="Pricing information">
         <div className="section-container text-center">
-          <div className="inline-flex items-center gap-3 bg-green-50 border border-green-200 text-green-800 rounded-2xl px-6 py-4">
-            <IndianRupee className="w-5 h-5 text-green-600 shrink-0" />
+          <div className="inline-flex items-center gap-3 bg-security-accent/10 border border-security-accent/20 text-security-primary rounded-2xl px-6 py-4">
+            <IndianRupee className="w-5 h-5 text-security-accent shrink-0" />
             <div className="text-left">
               <p className="font-bold text-sm">Free Written Estimate</p>
-              <p className="text-xs text-green-700">No call-out fee. We visit, assess, and provide a written quote with no obligation.</p>
+              <p className="text-xs text-security-accent">No call-out fee. We visit, assess, and provide a written quote with no obligation.</p>
             </div>
             <Link href="/quote" className="btn-accent ml-4 text-sm px-5 py-2.5 shrink-0">
               Get a Quote
@@ -148,7 +148,7 @@ export default function ServicePage({ params }: Props) {
       {relatedServices.length > 0 && (
         <section className="section-padding section-alt" aria-labelledby="related-heading">
           <div className="section-container">
-            <h2 id="related-heading" className="text-slate-900 text-center mb-10">
+            <h2 id="related-heading" className="text-graphite text-center mb-10">
               Related Services
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -164,7 +164,7 @@ export default function ServicePage({ params }: Props) {
       {relatedPosts.length > 0 && (
         <section className="section-padding" aria-labelledby="related-articles-heading">
           <div className="section-container">
-            <h2 id="related-articles-heading" className="text-slate-900 text-center mb-10">
+            <h2 id="related-articles-heading" className="text-graphite text-center mb-10">
               Helpful Articles
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">

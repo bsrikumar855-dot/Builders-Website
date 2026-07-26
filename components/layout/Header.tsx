@@ -76,7 +76,7 @@ export default function Header() {
   return (
     <>
       <header
-        className="fixed top-0 left-0 right-0 z-50 border-b border-slate-200/50 bg-white/70 backdrop-blur-lg shadow-sm"
+        className="fixed top-0 left-0 right-0 z-50 border-b border-graphite/10/50 bg-white/70 backdrop-blur-lg shadow-sm"
       >
         {/* Discreet Brand Switcher inside the header so it remains fixed */}
         <BrandSwitcher />
@@ -130,7 +130,7 @@ export default function Header() {
                           animate={{ opacity: 1, y: 0, scale: 1 }}
                           exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -8, scale: 0.98 }}
                           transition={{ duration: shouldReduceMotion ? 0.01 : 0.2, ease: EASE }}
-                          className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[560px] bg-white rounded-2xl shadow-2xl border border-slate-100 p-6 origin-top"
+                          className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[560px] bg-white rounded-2xl shadow-2xl border border-warm-white p-6 origin-top"
                         >
                           <div className="grid grid-cols-2 gap-6">
                             {!isSecurity ? (
@@ -217,7 +217,7 @@ export default function Header() {
                               </>
                             )}
                           </div>
-                          <div className="mt-4 pt-4 border-t border-slate-100 text-center">
+                          <div className="mt-4 pt-4 border-t border-warm-white text-center">
                             <Link
                               href={isSecurity ? "/security/services" : "/services"}
                               onClick={() => setServicesOpen(false)}

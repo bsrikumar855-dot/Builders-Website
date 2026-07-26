@@ -17,7 +17,7 @@ export default function BlogPage() {
         <div className="section-container text-center">
           <p className="text-copper text-xs font-bold uppercase tracking-widest mb-3">Homeowner Resources</p>
           <h1 id="blog-page-heading" className="text-graphite mb-4">The Shreekumar Builders Blog</h1>
-          <p className="text-slate-600 text-lg max-w-2xl mx-auto">
+          <p className="text-slate-body text-lg max-w-2xl mx-auto">
             Straight answers to the electrical and plumbing questions Coimbatore homeowners actually ask us —
             written by the electricians and plumbers who do the work.
           </p>

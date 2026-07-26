@@ -19,7 +19,7 @@ const typeLabels: Record<string, string> = {
 };
 
 const typeStyles: Record<string, string> = {
-  residential: "bg-green-100 text-green-800",
+  residential: "bg-security-accent/10 text-security-primary",
   commercial: "bg-voltage/15 text-graphite",
   industrial: "bg-copper/15 text-graphite",
 };
@@ -56,12 +56,12 @@ export default function ProjectCard({ project, className }: ProjectCardProps) {
 
   return (
     <article
-      className={cn("group bg-white rounded-2xl border border-slate-100 overflow-hidden card-hover", className)}
+      className={cn("group bg-white rounded-2xl border border-warm-white overflow-hidden card-hover", className)}
     >
       {/* Image / compare area */}
       <div
         ref={containerRef}
-        className={cn("relative h-52 overflow-hidden bg-slate-100 select-none", hasCompare && "md:cursor-ew-resize")}
+        className={cn("relative h-52 overflow-hidden bg-warm-white select-none", hasCompare && "md:cursor-ew-resize")}
         onPointerDown={hasCompare ? handlePointerDown : undefined}
         onPointerMove={hasCompare ? handlePointerMove : undefined}
       >
@@ -142,7 +142,7 @@ export default function ProjectCard({ project, className }: ProjectCardProps) {
           {project.description}
         </p>
 
-        <div className="flex items-center gap-4 text-xs text-slate-400">
+        <div className="flex items-center gap-4 text-xs text-slate-body/50">
           <span className="flex items-center gap-1">
             <MapPin className="w-3.5 h-3.5" />
             {project.location}

@@ -41,7 +41,7 @@ export default function PlumbingPage() {
           <h1 id="plumb-heading" className="text-graphite mb-4 max-w-3xl">
             Professional Plumbing Services in Coimbatore
           </h1>
-          <p className="text-slate-600 text-lg max-w-2xl leading-relaxed mb-8">
+          <p className="text-slate-body text-lg max-w-2xl leading-relaxed mb-8">
             Leak detection and repair, full bathroom and kitchen plumbing, water tank and pump installations, drain clearance, and commercial plumbing — all with a 5-year workmanship warranty.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
@@ -60,23 +60,23 @@ export default function PlumbingPage() {
         <div className="section-container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 id="plumb-why-heading" className="text-slate-900 mb-6">
+              <h2 id="plumb-why-heading" className="text-graphite mb-6">
                 The Cost of Poor Plumbing
               </h2>
-              <p className="text-slate-500 mb-6 leading-relaxed">
+              <p className="text-slate-body mb-6 leading-relaxed">
                 A small undetected leak can cause structural damage worth lakhs of rupees within months. Poor drainage design leads to recurring blockages. Our team uses proper materials, correct jointing techniques, and always tests before closing walls.
               </p>
               <ul className="space-y-3">
                 {plumbingHighlights.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-sm text-slate-700">
-                    <CheckCircle className="w-5 h-5 text-green-500 shrink-0 mt-0.5" />
+                  <li key={item} className="flex items-start gap-3 text-sm text-graphite">
+                    <CheckCircle className="w-5 h-5 text-security-accent shrink-0 mt-0.5" />
                     {item}
                   </li>
                 ))}
               </ul>
             </div>
-            <div className="bg-white rounded-2xl border border-slate-100 p-6 space-y-4">
-              <p className="text-sm font-bold text-slate-900 mb-4">Emergency Plumbing — Call Immediately If You See:</p>
+            <div className="bg-white rounded-2xl border border-warm-white p-6 space-y-4">
+              <p className="text-sm font-bold text-graphite mb-4">Emergency Plumbing — Call Immediately If You See:</p>
               {[
                 "Burst pipe flooding a room or underfloor",
                 "Raw sewage overflow in bathroom or drain",
@@ -99,7 +99,7 @@ export default function PlumbingPage() {
 
       <section className="section-padding" aria-labelledby="plumb-services-heading">
         <div className="section-container">
-          <h2 id="plumb-services-heading" className="text-slate-900 text-center mb-10">
+          <h2 id="plumb-services-heading" className="text-graphite text-center mb-10">
             All Plumbing Services
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

@@ -53,14 +53,14 @@ export default function BlogCategoryPage({ params }: Props) {
 
   return (
     <>
-      <nav aria-label="Breadcrumb" className="border-b border-slate-100 bg-white">
+      <nav aria-label="Breadcrumb" className="border-b border-warm-white bg-white">
         <div className="section-container py-4">
-          <ol className="flex items-center gap-2 text-sm text-slate-500">
-            <li><Link href="/" className="hover:text-blue-800 transition-colors">Home</Link></li>
+          <ol className="flex items-center gap-2 text-sm text-slate-body">
+            <li><Link href="/" className="hover:text-graphite transition-colors">Home</Link></li>
             <li><ChevronRight className="w-4 h-4" /></li>
-            <li><Link href="/blog" className="hover:text-blue-800 transition-colors">Blog</Link></li>
+            <li><Link href="/blog" className="hover:text-graphite transition-colors">Blog</Link></li>
             <li><ChevronRight className="w-4 h-4" /></li>
-            <li className="text-slate-900 font-medium">{categoryLabels[category]}</li>
+            <li className="text-graphite font-medium">{categoryLabels[category]}</li>
           </ol>
         </div>
       </nav>
@@ -69,14 +69,14 @@ export default function BlogCategoryPage({ params }: Props) {
         <div className="section-container text-center">
           <p className="text-copper text-xs font-bold uppercase tracking-widest mb-3">Blog Category</p>
           <h1 id="blog-category-heading" className="text-graphite mb-4">{categoryLabels[category]} Articles</h1>
-          <p className="text-slate-600 text-lg max-w-2xl mx-auto">{categoryDescriptions[category]}</p>
+          <p className="text-slate-body text-lg max-w-2xl mx-auto">{categoryDescriptions[category]}</p>
         </div>
       </section>
 
       <section className="section-padding" aria-label={`${categoryLabels[category]} articles`}>
         <div className="section-container">
           {filtered.length === 0 ? (
-            <p className="text-center text-slate-500 py-16">No articles in this category yet — check back soon.</p>
+            <p className="text-center text-slate-body py-16">No articles in this category yet — check back soon.</p>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {filtered.map((post) => (

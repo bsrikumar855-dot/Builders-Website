@@ -20,7 +20,7 @@ export default function AreasPage() {
         <div className="section-container text-center max-w-2xl mx-auto">
           <p className="text-copper text-xs font-bold uppercase tracking-widest mb-3">Service Coverage</p>
           <h1 id="areas-page-heading" className="text-graphite mb-4">Areas We Serve</h1>
-          <p className="text-slate-600 text-lg">
+          <p className="text-slate-body text-lg">
             We cover all areas of Coimbatore city and district. Click your area below for local service information and availability.
           </p>
         </div>
@@ -38,21 +38,21 @@ export default function AreasPage() {
                 <Link
                   key={area.slug}
                   href={`/areas/${area.slug}`}
-                  className="group bg-white border border-slate-100 rounded-2xl p-6 hover:border-blue-200 hover:shadow-lg transition-all duration-200"
+                  className="group bg-white border border-warm-white rounded-2xl p-6 hover:border-graphite/20 hover:shadow-lg transition-all duration-200"
                 >
                   <div className="flex items-start gap-4">
-                    <div className="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center shrink-0 group-hover:bg-blue-100 transition-colors">
-                      <MapPin className="w-6 h-6 text-blue-700" />
+                    <div className="w-12 h-12 rounded-xl bg-warm-white flex items-center justify-center shrink-0 group-hover:bg-graphite/10 transition-colors">
+                      <MapPin className="w-6 h-6 text-graphite" />
                     </div>
                     <div className="flex-1">
                       <div className="flex items-center justify-between gap-2 mb-1">
-                        <h2 className="text-lg font-bold text-slate-900 group-hover:text-blue-800 transition-colors">
+                        <h2 className="text-lg font-bold text-graphite group-hover:text-graphite transition-colors">
                           {area.name}
                         </h2>
-                        <ArrowRight className="w-5 h-5 text-slate-400 group-hover:text-blue-700 group-hover:translate-x-1 transition-all shrink-0" />
+                        <ArrowRight className="w-5 h-5 text-slate-body/50 group-hover:text-graphite group-hover:translate-x-1 transition-all shrink-0" />
                       </div>
-                      <p className="text-xs text-slate-500 mb-3">{area.district}, Tamilnadu</p>
-                      <p className="text-sm text-slate-500 leading-relaxed line-clamp-2 mb-4">
+                      <p className="text-xs text-slate-body mb-3">{area.district}, Tamilnadu</p>
+                      <p className="text-sm text-slate-body leading-relaxed line-clamp-2 mb-4">
                         {area.description}
                       </p>
                       <div className="flex flex-wrap gap-2">
@@ -61,7 +61,7 @@ export default function AreasPage() {
                             key={s.slug}
                             className={`inline-flex items-center gap-1 text-xs font-semibold px-2.5 py-1 rounded-full ${
                               s.category === "electrical"
-                                ? "bg-blue-50 text-blue-700"
+                                ? "bg-warm-white text-graphite"
                                 : "bg-cyan-50 text-cyan-700"
                             }`}
                           >
@@ -74,7 +74,7 @@ export default function AreasPage() {
                           </span>
                         ))}
                         {areaServices.length > 3 && (
-                          <span className="text-xs text-slate-400">+{areaServices.length - 3} more</span>
+                          <span className="text-xs text-slate-body/50">+{areaServices.length - 3} more</span>
                         )}
                       </div>
                     </div>
@@ -85,9 +85,9 @@ export default function AreasPage() {
           </div>
 
           {/* Catchall note */}
-          <div className="bg-slate-50 border border-slate-200 rounded-2xl p-6 text-center">
-            <h3 className="font-bold text-slate-900 mb-2">Don&apos;t See Your Area?</h3>
-            <p className="text-slate-500 text-sm mb-4 max-w-lg mx-auto">
+          <div className="bg-warm-white border border-graphite/10 rounded-2xl p-6 text-center">
+            <h3 className="font-bold text-graphite mb-2">Don&apos;t See Your Area?</h3>
+            <p className="text-slate-body text-sm mb-4 max-w-lg mx-auto">
               We serve all of Coimbatore district. If your area isn&apos;t listed, call or message us — we almost certainly cover it.
             </p>
             <Link href={`tel:${siteConfig.phone}`} className="btn-primary">

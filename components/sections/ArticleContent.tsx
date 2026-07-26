@@ -10,7 +10,7 @@ export default function ArticleContent({ blocks }: ArticleContentProps) {
       {blocks.map((block, i) => {
         if (block.type === "heading") {
           return (
-            <h2 key={i} className="text-2xl font-bold text-slate-900 !mt-10 mb-2">
+            <h2 key={i} className="text-2xl font-bold text-graphite !mt-10 mb-2">
               {block.text}
             </h2>
           );
@@ -19,8 +19,8 @@ export default function ArticleContent({ blocks }: ArticleContentProps) {
           return (
             <ul key={i} className="space-y-2 pl-1">
               {block.items.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-slate-600 leading-relaxed">
-                  <span className="w-1.5 h-1.5 rounded-full bg-blue-700 shrink-0 mt-2.5" />
+                <li key={item} className="flex items-start gap-3 text-slate-body leading-relaxed">
+                  <span className="w-1.5 h-1.5 rounded-full bg-voltage shrink-0 mt-2.5" />
                   {item}
                 </li>
               ))}
@@ -28,7 +28,7 @@ export default function ArticleContent({ blocks }: ArticleContentProps) {
           );
         }
         return (
-          <p key={i} className="text-slate-600 leading-relaxed">
+          <p key={i} className="text-slate-body leading-relaxed">
             {block.text}
           </p>
         );
