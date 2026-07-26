@@ -51,23 +51,7 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        brand: {
-          50:  "#eff6ff",
-          100: "#dbeafe",
-          200: "#bfdbfe",
-          300: "#93c5fd",
-          400: "#60a5fa",
-          500: "#3b82f6",
-          600: "#1d4ed8",
-          700: "#1e3a8a",
-          800: "#1e2f5e",
-          900: "#0f172a",
-        },
-        amber: {
-          400: "#fbbf24",
-          500: "#f59e0b",
-          600: "#d97706",
-        },
+
         // ── Design system tokens (2026 motion/visual pass) ──────────────────
         // Named literal colors for new components. Existing shared classes
         // (.btn-primary, .btn-accent, .gradient-brand, category chips) pull

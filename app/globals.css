@@ -161,27 +161,27 @@
   .text-pretty { text-wrap: pretty; }
   
   .gradient-brand {
-    background: linear-gradient(135deg, #F8FAFC 0%, #F1F5F9 50%, #E2E8F0 100%);
+    background: linear-gradient(135deg, hsl(var(--graphite-deep)) 0%, hsl(var(--graphite)) 60%, hsl(var(--graphite-lifted)) 100%);
   }
 
   .gradient-hero {
-    background: linear-gradient(160deg, #F8FAFC 0%, #F1F5F9 50%, #E2E8F0 100%);
+    background: linear-gradient(160deg, hsl(var(--graphite-deep)) 0%, hsl(var(--graphite)) 50%, hsl(var(--graphite-lifted)) 100%);
   }
 
   .hero-overlay {
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.95) 0%, rgba(255, 255, 255, 0.75) 60%, rgba(255, 255, 255, 0.4) 100%);
+    background: linear-gradient(to right, hsl(var(--graphite) / 0.95) 0%, hsl(var(--graphite) / 0.75) 60%, hsl(var(--graphite) / 0.4) 100%);
   }
 
   .section-alt {
-    @apply bg-slate-50;
+    background-color: hsl(var(--secondary));
   }
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #f1f5f9; }
-::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #64748b; }
+::-webkit-scrollbar-track { background: hsl(var(--secondary)); }
+::-webkit-scrollbar-thumb { background: hsl(var(--graphite) / 0.3); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: hsl(var(--graphite) / 0.5); }
 
 /* Floating CTA animation */
 @keyframes pulse-ring {

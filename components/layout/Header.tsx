@@ -79,7 +79,7 @@ export default function Header() {
         className="fixed top-0 left-0 right-0 z-50 border-b border-slate-200/50 bg-white/70 backdrop-blur-lg shadow-sm"
       >
         {/* Discreet Brand Switcher inside the header so it remains fixed */}
-        <BrandSwitcher scrolled={true} />
+        <BrandSwitcher />
 
         <div className="section-container">
           <div className="flex items-center justify-between h-16 md:h-20">
