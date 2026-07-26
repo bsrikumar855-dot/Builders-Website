@@ -16,20 +16,27 @@ export default function ServiceCard({ service, variant = "default", className }:
   // Dynamically resolve lucide icon
   const Icon = (Icons[service.icon as keyof typeof Icons] as LucideIcon) ?? Icons.Wrench;
 
-  const categoryLabel = service.category === "electrical" ? "Electrical" : "Plumbing";
-  const categoryClass =
-    service.category === "electrical" ? "category-chip-electrical" : "category-chip-plumbing";
+  const isSec = service.category === "security";
+  const categoryLabel = isSec ? "Security" : (service.category === "electrical" ? "Electrical" : "Plumbing");
+  const categoryClass = isSec
+    ? "bg-security-accent/10 text-security-accent border border-security-accent/20 rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider"
+    : (service.category === "electrical" ? "category-chip-electrical" : "category-chip-plumbing");
+
+  const detailUrl = isSec ? `/security/services/${service.slug}` : `/services/${service.slug}`;
 
   if (variant === "compact") {
     return (
       <Link
-        href={`/services/${service.slug}`}
+        href={detailUrl}
         className={cn(
           "group flex items-center gap-4 p-4 rounded-xl bg-white border border-warm-white hover:border-voltage/40 hover:shadow-md transition-all duration-200",
           className
         )}
       >
-        <div className="w-10 h-10 rounded-lg gradient-brand flex items-center justify-center shrink-0">
+        <div className={cn(
+          "w-10 h-10 rounded-lg flex items-center justify-center shrink-0",
+          isSec ? "bg-gradient-to-br from-security-primary to-security-accent" : "gradient-brand"
+        )}>
           <Icon className="w-5 h-5 text-warm-white" />
         </div>
         <div className="flex-1 min-w-0">
@@ -56,7 +63,7 @@ export default function ServiceCard({ service, variant = "default", className }:
       <div className="relative flex-1 min-h-[12rem] overflow-hidden bg-warm-white">
         <Image
           src={service.image}
-          alt={`${service.name} service — Shreekumar Builders, Coimbatore`}
+          alt={`${service.name} service — Sabari Security, Coimbatore`}
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-500"
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -68,7 +75,10 @@ export default function ServiceCard({ service, variant = "default", className }:
       {/* Content */}
       <div className="p-6 shrink-0">
         <div className="flex items-start gap-3 mb-3">
-          <div className="w-10 h-10 rounded-lg gradient-brand flex items-center justify-center shrink-0">
+          <div className={cn(
+            "w-10 h-10 rounded-lg flex items-center justify-center shrink-0",
+            isSec ? "bg-gradient-to-br from-security-primary to-security-accent" : "gradient-brand"
+          )}>
             <Icon className="w-5 h-5 text-warm-white" />
           </div>
           <h3 className="text-lg font-bold text-graphite leading-snug">{service.name}</h3>
@@ -88,7 +98,7 @@ export default function ServiceCard({ service, variant = "default", className }:
         )}
 
         <Link
-          href={`/services/${service.slug}`}
+          href={detailUrl}
           className="inline-flex items-center gap-2 text-sm font-semibold text-graphite hover:underline group/link mt-4"
         >
           Learn More
